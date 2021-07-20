@@ -1,0 +1,64 @@
+{
+  "name": "File Renaming and population of Credit Score Enhancement",
+  "description": "rename the files in folder and populate the Credit Score sheet",
+  "main": "Final Script.xaml",
+  "dependencies": {
+    "ActivitiesPdfToExcelV2": "[1.0.5]",
+    "FestSystems.PDFtoExcel.Activities": "[1.0.1]",
+    "Microsoft.Activities.Extensions": "[2.0.6.9]",
+    "Pdf.Text.Activities": "[1.0.1]",
+    "PDF_Activities": "[1.0.2]",
+    "RenameFile.Activities": "[1.0.4]",
+    "sautinsoft.pdffocus": "[8.0.6.21]",
+    "UiPath.Excel.Activities": "[2.11.0-preview]",
+    "UiPath.IntelligentOCR.Activities": "[4.14.2-preview]",
+    "UiPath.Mail.Activities": "[1.9.3]",
+    "UiPath.PDF.Activities": "[3.4.0]",
+    "UiPath.System.Activities": "[21.6.1-preview]",
+    "UiPath.UIAutomation.Activities": "[20.10.5]",
+    "UiPathTeam.PDF.Extensions.Activities": "[2.4.0]"
+  },
+  "webServices": [],
+  "entitiesStores": [],
+  "schemaVersion": "4.0",
+  "studioVersion": "20.10.0.0",
+  "projectVersion": "1.0.1",
+  "runtimeOptions": {
+    "autoDispose": false,
+    "isPausable": true,
+    "requiresUserInteraction": true,
+    "supportsPersistence": false,
+    "excludedLoggedData": [
+      "Private:*",
+      "*password*"
+    ],
+    "executionType": "Workflow",
+    "readyForPiP": false,
+    "startsInPiP": false
+  },
+  "designOptions": {
+    "projectProfile": "Developement",
+    "outputType": "Process",
+    "libraryOptions": {
+      "includeOriginalXaml": false,
+      "privateWorkflows": []
+    },
+    "processOptions": {
+      "ignoredFiles": []
+    },
+    "fileInfoCollection": [],
+    "modernBehavior": false
+  },
+  "expressionLanguage": "CSharp",
+  "entryPoints": [
+    {
+      "filePath": "Final Script.xaml",
+      "uniqueId": "e9f73bb1-b73c-4df8-9ae7-dfa5cbc4cc28",
+      "input": [],
+      "output": []
+    }
+  ],
+  "isTemplate": true,
+  "templateProjectData": {},
+  "publishData": {}
+}
