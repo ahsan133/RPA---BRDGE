@@ -79,7 +79,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Flowchart DisplayName="Data Extraction" sap:VirtualizedContainerService.HintSize="634,1436" sap2010:WorkflowViewState.IdRef="Flowchart_1">
+  <Flowchart DisplayName="Data Extraction" sap:VirtualizedContainerService.HintSize="649,1813" sap2010:WorkflowViewState.IdRef="Flowchart_1">
     <Flowchart.Variables>
       <Variable x:TypeArguments="scg:ICollection(x:String)" Name="GuaranterACRA" />
       <Variable x:TypeArguments="scg:ICollection(x:String)" Name="CBS" />
@@ -92,28 +92,30 @@
       <Variable x:TypeArguments="x:String" Name="BankStatementsPath" />
       <Variable x:TypeArguments="x:String" Name="FinancialStatement" />
       <Variable x:TypeArguments="x:String" Name="CreditScore" />
+      <Variable x:TypeArguments="x:Boolean" Name="IsFinancialStatementFolder" />
     </Flowchart.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <av:Point x:Key="ShapeLocation">270,2.5</av:Point>
         <av:Size x:Key="ShapeSize">60,75</av:Size>
-        <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,114.5</av:PointCollection>
-        <x:Double x:Key="Height">1400.0931612945058</x:Double>
+        <av:PointCollection x:Key="ConnectorLocation">300,77.5 300,104</av:PointCollection>
+        <x:Double x:Key="Height">1777.0714063310593</x:Double>
+        <x:Double x:Key="Width">615.08127770908607</x:Double>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <Flowchart.StartNode>
-      <x:Reference>__ReferenceID15</x:Reference>
+      <x:Reference>__ReferenceID17</x:Reference>
     </Flowchart.StartNode>
-    <FlowStep x:Name="__ReferenceID15">
+    <FlowStep x:Name="__ReferenceID17">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <av:Point x:Key="ShapeLocation">200,114.5</av:Point>
-          <av:Size x:Key="ShapeSize">200,51</av:Size>
-          <av:PointCollection x:Key="ConnectorLocation">300,165.5 300,184.5</av:PointCollection>
+          <av:Point x:Key="ShapeLocation">200,104</av:Point>
+          <av:Size x:Key="ShapeSize">200,52</av:Size>
+          <av:PointCollection x:Key="ConnectorLocation">300,156 300,174</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke FileSystem workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="FileSystem.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke FileSystem workflow" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="FileSystem.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <OutArgument x:TypeArguments="x:String" x:Key="BankStatementFolderPath">
             <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_50">BankStatementsPath</mca:CSharpReference>
@@ -139,6 +141,9 @@
           <OutArgument x:TypeArguments="x:String" x:Key="CreditScore">
             <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_53">CreditScore</mca:CSharpReference>
           </OutArgument>
+          <InArgument x:TypeArguments="x:Boolean" x:Key="IsFinancialStatementFolder">
+            <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_83">IsFinancialStatementFolder</mca:CSharpValue>
+          </InArgument>
         </ui:InvokeWorkflowFile.Arguments>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -150,12 +155,12 @@
         <FlowStep x:Name="__ReferenceID14">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <av:Point x:Key="ShapeLocation">200,184.5</av:Point>
-              <av:Size x:Key="ShapeSize">200,51</av:Size>
-              <av:PointCollection x:Key="ConnectorLocation">300,235.5 300,254</av:PointCollection>
+              <av:Point x:Key="ShapeLocation">200,174</av:Point>
+              <av:Size x:Key="ShapeSize">200,52</av:Size>
+              <av:PointCollection x:Key="ConnectorLocation">300,226 300,244</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:ReadRange Range="{x:Null}" AddHeaders="True" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ReadRange_4" SheetName="CREDIT SCORE">
+          <ui:ReadRange Range="{x:Null}" AddHeaders="True" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="ReadRange_4" SheetName="CREDIT SCORE">
             <ui:ReadRange.DataTable>
               <OutArgument x:TypeArguments="sd:DataTable">
                 <mca:CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_54">outputDataTable</mca:CSharpReference>
@@ -173,15 +178,15 @@
             </ui:ReadRange.WorkbookPath>
           </ui:ReadRange>
           <FlowStep.Next>
-            <FlowStep x:Name="__ReferenceID7">
+            <FlowStep x:Name="__ReferenceID8">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <av:Point x:Key="ShapeLocation">200,254</av:Point>
-                  <av:Size x:Key="ShapeSize">200,51</av:Size>
-                  <av:PointCollection x:Key="ConnectorLocation">300,306 300,324</av:PointCollection>
+                  <av:Point x:Key="ShapeLocation">200,244</av:Point>
+                  <av:Size x:Key="ShapeSize">200,52</av:Size>
+                  <av:PointCollection x:Key="ConnectorLocation">300,296 300,314</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ACRA workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Company ACRA.xaml">
+              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ACRA workflow" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Company ACRA.xaml">
                 <ui:InvokeWorkflowFile.Arguments>
                   <InArgument x:TypeArguments="x:String" x:Key="ACRAFile">
                     <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_69">ACRAFile</mca:CSharpValue>
@@ -194,15 +199,15 @@
                 </sap:WorkflowViewStateService.ViewState>
               </ui:InvokeWorkflowFile>
               <FlowStep.Next>
-                <FlowStep x:Name="__ReferenceID8">
+                <FlowStep x:Name="__ReferenceID9">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <av:Point x:Key="ShapeLocation">200,324</av:Point>
-                      <av:Size x:Key="ShapeSize">200,51</av:Size>
-                      <av:PointCollection x:Key="ConnectorLocation">300,376 300,394</av:PointCollection>
+                      <av:Point x:Key="ShapeLocation">200,314</av:Point>
+                      <av:Size x:Key="ShapeSize">200,52</av:Size>
+                      <av:PointCollection x:Key="ConnectorLocation">300,366 300,396.5</av:PointCollection>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Compare Excel files workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Compare Excel files.xaml">
+                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Compare Excel files workflow" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Compare Excel files.xaml">
                     <ui:InvokeWorkflowFile.Arguments>
                       <InArgument x:TypeArguments="x:String" x:Key="inputFilePath">Excel output files/Company ACRA output.xlsx</InArgument>
                       <InArgument x:TypeArguments="x:String" x:Key="CreditScore">
@@ -216,40 +221,32 @@
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:InvokeWorkflowFile>
                   <FlowStep.Next>
-                    <FlowStep x:Name="__ReferenceID11">
+                    <FlowDecision x:Name="__ReferenceID15" DisplayName="Is Financial Statement a Folder" sap:VirtualizedContainerService.HintSize="160,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
+                      <FlowDecision.Condition>
+                        <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_84">IsFinancialStatementFolder == true</mca:CSharpValue>
+                      </FlowDecision.Condition>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <av:Point x:Key="ShapeLocation">200,394</av:Point>
-                          <av:Size x:Key="ShapeSize">200,51</av:Size>
-                          <av:PointCollection x:Key="ConnectorLocation">300,445 300,474.5</av:PointCollection>
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          <av:Point x:Key="ShapeLocation">220,396.5</av:Point>
+                          <av:Size x:Key="ShapeSize">160,87</av:Size>
+                          <av:PointCollection x:Key="FalseConnector">380,440 460,440 460,494</av:PointCollection>
+                          <av:PointCollection x:Key="TrueConnector">220,440 140,440 140,494</av:PointCollection>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Financial Statement workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Financial Statement.xaml">
-                        <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="x:String" x:Key="FinancialStatementPath">
-                            <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_72">FinancialStatement</mca:CSharpValue>
-                          </InArgument>
-                        </ui:InvokeWorkflowFile.Arguments>
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                      </ui:InvokeWorkflowFile>
-                      <FlowStep.Next>
-                        <FlowStep x:Name="__ReferenceID12">
+                      <FlowDecision.True>
+                        <FlowStep x:Name="__ReferenceID16">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <av:Point x:Key="ShapeLocation">200,474.5</av:Point>
-                              <av:Size x:Key="ShapeSize">200,51</av:Size>
-                              <av:PointCollection x:Key="ConnectorLocation">300,525.5 300,554</av:PointCollection>
+                              <av:Point x:Key="ShapeLocation">40,494</av:Point>
+                              <av:Size x:Key="ShapeSize">200,52</av:Size>
+                              <av:PointCollection x:Key="ConnectorLocation">140,546 140,576 300,576 300,614</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Compare Excel files workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_14" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Compare Excel files.xaml">
+                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Financial Statement Folder Files workflow" sap:VirtualizedContainerService.HintSize="334,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Financial Statement Folder Files.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
-                              <InArgument x:TypeArguments="x:String" x:Key="inputFilePath">Excel output files/Financial Statement Output.xlsx</InArgument>
-                              <InArgument x:TypeArguments="x:String" x:Key="CreditScore">
-                                <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_77">CreditScore</mca:CSharpValue>
+                              <InArgument x:TypeArguments="x:String" x:Key="FinancialStatementFolderPath">
+                                <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_85">FinancialStatement</mca:CSharpValue>
                               </InArgument>
                             </ui:InvokeWorkflowFile.Arguments>
                             <sap:WorkflowViewStateService.ViewState>
@@ -259,18 +256,19 @@
                             </sap:WorkflowViewStateService.ViewState>
                           </ui:InvokeWorkflowFile>
                           <FlowStep.Next>
-                            <FlowStep x:Name="__ReferenceID9">
+                            <FlowStep x:Name="__ReferenceID0">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                  <av:Point x:Key="ShapeLocation">200,554</av:Point>
-                                  <av:Size x:Key="ShapeSize">200,51</av:Size>
-                                  <av:PointCollection x:Key="ConnectorLocation">300,606 300,644</av:PointCollection>
+                                  <av:Point x:Key="ShapeLocation">200,614</av:Point>
+                                  <av:Size x:Key="ShapeSize">200,52</av:Size>
+                                  <av:PointCollection x:Key="ConnectorLocation">300,666 300,694</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke CheckBankInBankStatement workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="CheckBankInBankStatement.xaml">
+                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Compare Excel files workflow" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_14" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Compare Excel files.xaml">
                                 <ui:InvokeWorkflowFile.Arguments>
-                                  <InArgument x:TypeArguments="x:String" x:Key="BankStatementFolderPath">
-                                    <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_70">BankStatementsPath</mca:CSharpValue>
+                                  <InArgument x:TypeArguments="x:String" x:Key="inputFilePath">Excel output files/Financial Statement Output.xlsx</InArgument>
+                                  <InArgument x:TypeArguments="x:String" x:Key="CreditScore">
+                                    <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_77">CreditScore</mca:CSharpValue>
                                   </InArgument>
                                 </ui:InvokeWorkflowFile.Arguments>
                                 <sap:WorkflowViewStateService.ViewState>
@@ -283,16 +281,15 @@
                                 <FlowStep x:Name="__ReferenceID10">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <av:Point x:Key="ShapeLocation">200,644</av:Point>
-                                      <av:Size x:Key="ShapeSize">200,51</av:Size>
-                                      <av:PointCollection x:Key="ConnectorLocation">300,696 300,724</av:PointCollection>
+                                      <av:Point x:Key="ShapeLocation">200,694</av:Point>
+                                      <av:Size x:Key="ShapeSize">200,52</av:Size>
+                                      <av:PointCollection x:Key="ConnectorLocation">300,746 300,784</av:PointCollection>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Compare Excel files workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Compare Excel files.xaml">
+                                  <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke CheckBankInBankStatement workflow" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="CheckBankInBankStatement.xaml">
                                     <ui:InvokeWorkflowFile.Arguments>
-                                      <InArgument x:TypeArguments="x:String" x:Key="inputFilePath">Excel output files/Bank Statement Output.xlsx</InArgument>
-                                      <InArgument x:TypeArguments="x:String" x:Key="CreditScore">
-                                        <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_78">CreditScore</mca:CSharpValue>
+                                      <InArgument x:TypeArguments="x:String" x:Key="BankStatementFolderPath">
+                                        <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_70">BankStatementsPath</mca:CSharpValue>
                                       </InArgument>
                                     </ui:InvokeWorkflowFile.Arguments>
                                     <sap:WorkflowViewStateService.ViewState>
@@ -302,432 +299,456 @@
                                     </sap:WorkflowViewStateService.ViewState>
                                   </ui:InvokeWorkflowFile>
                                   <FlowStep.Next>
-                                    <FlowStep x:Name="__ReferenceID0">
+                                    <FlowStep x:Name="__ReferenceID11">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <av:Point x:Key="ShapeLocation">200,724</av:Point>
-                                          <av:Size x:Key="ShapeSize">200,51</av:Size>
-                                          <av:PointCollection x:Key="ConnectorLocation">300,776 300,800</av:PointCollection>
+                                          <av:Point x:Key="ShapeLocation">200,784</av:Point>
+                                          <av:Size x:Key="ShapeSize">200,52</av:Size>
+                                          <av:PointCollection x:Key="ConnectorLocation">300,836 300,864</av:PointCollection>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ForEach`1_4">
-                                        <ui:ForEach.Body>
-                                          <ActivityAction x:TypeArguments="x:String">
-                                            <ActivityAction.Argument>
-                                              <DelegateInArgument x:TypeArguments="x:String" Name="item" />
-                                            </ActivityAction.Argument>
-                                            <Sequence sap:VirtualizedContainerService.HintSize="518,826" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Compare Excel files workflow" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Compare Excel files.xaml">
+                                        <ui:InvokeWorkflowFile.Arguments>
+                                          <InArgument x:TypeArguments="x:String" x:Key="inputFilePath">Excel output files/Bank Statement Output.xlsx</InArgument>
+                                          <InArgument x:TypeArguments="x:String" x:Key="CreditScore">
+                                            <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_78">CreditScore</mca:CSharpValue>
+                                          </InArgument>
+                                        </ui:InvokeWorkflowFile.Arguments>
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                      </ui:InvokeWorkflowFile>
+                                      <FlowStep.Next>
+                                        <FlowStep x:Name="__ReferenceID1">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <av:Point x:Key="ShapeLocation">200,864</av:Point>
+                                              <av:Size x:Key="ShapeSize">200,52</av:Size>
+                                              <av:PointCollection x:Key="ConnectorLocation">300,916 300,940</av:PointCollection>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="ForEach`1_4">
+                                            <ui:ForEach.Body>
+                                              <ActivityAction x:TypeArguments="x:String">
+                                                <ActivityAction.Argument>
+                                                  <DelegateInArgument x:TypeArguments="x:String" Name="item" />
+                                                </ActivityAction.Argument>
+                                                <Sequence sap:VirtualizedContainerService.HintSize="518,826" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                                                  <sap:WorkflowViewStateService.ViewState>
+                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    </scg:Dictionary>
+                                                  </sap:WorkflowViewStateService.ViewState>
+                                                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,734" sap2010:WorkflowViewState.IdRef="Sequence_1">
+                                                    <sap:WorkflowViewStateService.ViewState>
+                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                      </scg:Dictionary>
+                                                    </sap:WorkflowViewStateService.ViewState>
+                                                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ACRA2 workflow" sap:VirtualizedContainerService.HintSize="434,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="GUARANTOR ACRA.xaml">
+                                                      <ui:InvokeWorkflowFile.Arguments>
+                                                        <InArgument x:TypeArguments="x:String" x:Key="GuarantorACRAFile">
+                                                          <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">item.ToString()</mca:CSharpValue>
+                                                        </InArgument>
+                                                      </ui:InvokeWorkflowFile.Arguments>
+                                                    </ui:InvokeWorkflowFile>
+                                                    <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Compare Excel workflow" sap:VirtualizedContainerService.HintSize="434,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Compare Excel for Guarantor files.xaml">
+                                                      <ui:InvokeWorkflowFile.Arguments>
+                                                        <InArgument x:TypeArguments="x:String" x:Key="inputFilePath">Excel output files/GUARANTOR ACRA Output.xlsx</InArgument>
+                                                        <InArgument x:TypeArguments="x:Int32" x:Key="count">
+                                                          <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_25">count</mca:CSharpValue>
+                                                        </InArgument>
+                                                        <OutArgument x:TypeArguments="x:Int32" x:Key="value">
+                                                          <mca:CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_19">value</mca:CSharpReference>
+                                                        </OutArgument>
+                                                        <OutArgument x:TypeArguments="scg:ICollection(x:Int32)" x:Key="rowIndexs">
+                                                          <mca:CSharpReference x:TypeArguments="scg:ICollection(x:Int32)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_21">rowIndex</mca:CSharpReference>
+                                                        </OutArgument>
+                                                        <InArgument x:TypeArguments="sd:DataTable" x:Key="outputTable">
+                                                          <mca:CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_46">outputDataTable</mca:CSharpValue>
+                                                        </InArgument>
+                                                        <InArgument x:TypeArguments="x:String" x:Key="CreditScore">
+                                                          <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_79">CreditScore</mca:CSharpValue>
+                                                        </InArgument>
+                                                      </ui:InvokeWorkflowFile.Arguments>
+                                                    </ui:InvokeWorkflowFile>
+                                                    <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="434,238" sap2010:WorkflowViewState.IdRef="ForEach`1_8">
+                                                      <ui:ForEach.Body>
+                                                        <ActivityAction x:TypeArguments="x:Object">
+                                                          <ActivityAction.Argument>
+                                                            <DelegateInArgument x:TypeArguments="x:Object" Name="item" />
+                                                          </ActivityAction.Argument>
+                                                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                                                            <sap:WorkflowViewStateService.ViewState>
+                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                              </scg:Dictionary>
+                                                            </sap:WorkflowViewStateService.ViewState>
+                                                            <ui:RemoveDataRow Row="{x:Null}" DisplayName="Remove Data Row" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="RemoveDataRow_1">
+                                                              <ui:RemoveDataRow.DataTable>
+                                                                <InOutArgument x:TypeArguments="sd:DataTable">
+                                                                  <mca:CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_33">outputDataTable</mca:CSharpReference>
+                                                                </InOutArgument>
+                                                              </ui:RemoveDataRow.DataTable>
+                                                              <ui:RemoveDataRow.RowIndex>
+                                                                <InArgument x:TypeArguments="x:Int32">
+                                                                  <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_30">int.Parse(item.ToString())</mca:CSharpValue>
+                                                                </InArgument>
+                                                              </ui:RemoveDataRow.RowIndex>
+                                                            </ui:RemoveDataRow>
+                                                          </Sequence>
+                                                        </ActivityAction>
+                                                      </ui:ForEach.Body>
+                                                      <ui:ForEach.Values>
+                                                        <InArgument x:TypeArguments="sc:IEnumerable">
+                                                          <mca:CSharpValue x:TypeArguments="sc:IEnumerable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_29">rowIndex</mca:CSharpValue>
+                                                        </InArgument>
+                                                      </ui:ForEach.Values>
+                                                    </ui:ForEach>
+                                                    <Assign sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+                                                      <Assign.To>
+                                                        <OutArgument x:TypeArguments="x:Int32">
+                                                          <mca:CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_14">count</mca:CSharpReference>
+                                                        </OutArgument>
+                                                      </Assign.To>
+                                                      <Assign.Value>
+                                                        <InArgument x:TypeArguments="x:Int32">
+                                                          <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_26">count + value</mca:CSharpValue>
+                                                        </InArgument>
+                                                      </Assign.Value>
+                                                    </Assign>
+                                                  </Sequence>
+                                                </Sequence>
+                                              </ActivityAction>
+                                            </ui:ForEach.Body>
+                                            <ui:ForEach.Values>
+                                              <InArgument x:TypeArguments="sc:IEnumerable">
+                                                <mca:CSharpValue x:TypeArguments="sc:IEnumerable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">GuaranterACRA</mca:CSharpValue>
+                                              </InArgument>
+                                            </ui:ForEach.Values>
+                                          </ui:ForEach>
+                                          <FlowStep.Next>
+                                            <FlowStep x:Name="__ReferenceID5">
                                               <sap:WorkflowViewStateService.ViewState>
                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                  <av:Point x:Key="ShapeLocation">169,940</av:Point>
+                                                  <av:Size x:Key="ShapeSize">262,60</av:Size>
+                                                  <av:PointCollection x:Key="ConnectorLocation">300,1000 300,1034</av:PointCollection>
                                                 </scg:Dictionary>
                                               </sap:WorkflowViewStateService.ViewState>
-                                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,734" sap2010:WorkflowViewState.IdRef="Sequence_1">
+                                              <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="x:Int32">
+                                                    <mca:CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_39">count</mca:CSharpReference>
+                                                  </OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                                                </Assign.Value>
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke ACRA2 workflow" sap:VirtualizedContainerService.HintSize="434,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="GUARANTOR ACRA.xaml">
-                                                  <ui:InvokeWorkflowFile.Arguments>
-                                                    <InArgument x:TypeArguments="x:String" x:Key="GuarantorACRAFile">
-                                                      <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">item.ToString()</mca:CSharpValue>
-                                                    </InArgument>
-                                                  </ui:InvokeWorkflowFile.Arguments>
-                                                </ui:InvokeWorkflowFile>
-                                                <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Compare Excel workflow" sap:VirtualizedContainerService.HintSize="434,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Compare Excel for Guarantor files.xaml">
-                                                  <ui:InvokeWorkflowFile.Arguments>
-                                                    <InArgument x:TypeArguments="x:String" x:Key="inputFilePath">Excel output files/GUARANTOR ACRA Output.xlsx</InArgument>
-                                                    <InArgument x:TypeArguments="x:Int32" x:Key="count">
-                                                      <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_25">count</mca:CSharpValue>
-                                                    </InArgument>
-                                                    <OutArgument x:TypeArguments="x:Int32" x:Key="value">
-                                                      <mca:CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_19">value</mca:CSharpReference>
-                                                    </OutArgument>
-                                                    <OutArgument x:TypeArguments="scg:ICollection(x:Int32)" x:Key="rowIndexs">
-                                                      <mca:CSharpReference x:TypeArguments="scg:ICollection(x:Int32)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_21">rowIndex</mca:CSharpReference>
-                                                    </OutArgument>
-                                                    <InArgument x:TypeArguments="sd:DataTable" x:Key="outputTable">
-                                                      <mca:CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_46">outputDataTable</mca:CSharpValue>
-                                                    </InArgument>
-                                                    <InArgument x:TypeArguments="x:String" x:Key="CreditScore">
-                                                      <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_79">CreditScore</mca:CSharpValue>
-                                                    </InArgument>
-                                                  </ui:InvokeWorkflowFile.Arguments>
-                                                </ui:InvokeWorkflowFile>
-                                                <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="434,238" sap2010:WorkflowViewState.IdRef="ForEach`1_8">
-                                                  <ui:ForEach.Body>
-                                                    <ActivityAction x:TypeArguments="x:Object">
-                                                      <ActivityAction.Argument>
-                                                        <DelegateInArgument x:TypeArguments="x:Object" Name="item" />
-                                                      </ActivityAction.Argument>
-                                                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_5">
-                                                        <sap:WorkflowViewStateService.ViewState>
-                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                          </scg:Dictionary>
-                                                        </sap:WorkflowViewStateService.ViewState>
-                                                        <ui:RemoveDataRow Row="{x:Null}" DisplayName="Remove Data Row" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="RemoveDataRow_1">
-                                                          <ui:RemoveDataRow.DataTable>
-                                                            <InOutArgument x:TypeArguments="sd:DataTable">
-                                                              <mca:CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_33">outputDataTable</mca:CSharpReference>
-                                                            </InOutArgument>
-                                                          </ui:RemoveDataRow.DataTable>
-                                                          <ui:RemoveDataRow.RowIndex>
-                                                            <InArgument x:TypeArguments="x:Int32">
-                                                              <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_30">int.Parse(item.ToString())</mca:CSharpValue>
-                                                            </InArgument>
-                                                          </ui:RemoveDataRow.RowIndex>
-                                                        </ui:RemoveDataRow>
-                                                      </Sequence>
-                                                    </ActivityAction>
-                                                  </ui:ForEach.Body>
-                                                  <ui:ForEach.Values>
-                                                    <InArgument x:TypeArguments="sc:IEnumerable">
-                                                      <mca:CSharpValue x:TypeArguments="sc:IEnumerable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_29">rowIndex</mca:CSharpValue>
-                                                    </InArgument>
-                                                  </ui:ForEach.Values>
-                                                </ui:ForEach>
-                                                <Assign sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_1">
-                                                  <Assign.To>
-                                                    <OutArgument x:TypeArguments="x:Int32">
-                                                      <mca:CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_14">count</mca:CSharpReference>
-                                                    </OutArgument>
-                                                  </Assign.To>
-                                                  <Assign.Value>
-                                                    <InArgument x:TypeArguments="x:Int32">
-                                                      <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_26">count + value</mca:CSharpValue>
-                                                    </InArgument>
-                                                  </Assign.Value>
-                                                </Assign>
-                                              </Sequence>
-                                            </Sequence>
-                                          </ActivityAction>
-                                        </ui:ForEach.Body>
-                                        <ui:ForEach.Values>
-                                          <InArgument x:TypeArguments="sc:IEnumerable">
-                                            <mca:CSharpValue x:TypeArguments="sc:IEnumerable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">GuaranterACRA</mca:CSharpValue>
-                                          </InArgument>
-                                        </ui:ForEach.Values>
-                                      </ui:ForEach>
-                                      <FlowStep.Next>
-                                        <FlowStep x:Name="__ReferenceID4">
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <av:Point x:Key="ShapeLocation">169,800</av:Point>
-                                              <av:Size x:Key="ShapeSize">262,60</av:Size>
-                                              <av:PointCollection x:Key="ConnectorLocation">300,860 300,894</av:PointCollection>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_8">
-                                            <Assign.To>
-                                              <OutArgument x:TypeArguments="x:Int32">
-                                                <mca:CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_39">count</mca:CSharpReference>
-                                              </OutArgument>
-                                            </Assign.To>
-                                            <Assign.Value>
-                                              <InArgument x:TypeArguments="x:Int32">0</InArgument>
-                                            </Assign.Value>
-                                            <sap:WorkflowViewStateService.ViewState>
-                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                              </scg:Dictionary>
-                                            </sap:WorkflowViewStateService.ViewState>
-                                          </Assign>
-                                          <FlowStep.Next>
-                                            <FlowStep x:Name="__ReferenceID3">
-                                              <sap:WorkflowViewStateService.ViewState>
-                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <av:Point x:Key="ShapeLocation">200,894</av:Point>
-                                                  <av:Size x:Key="ShapeSize">200,51</av:Size>
-                                                  <av:PointCollection x:Key="ConnectorLocation">300,946 300,974</av:PointCollection>
-                                                </scg:Dictionary>
-                                              </sap:WorkflowViewStateService.ViewState>
-                                              <ui:ReadRange Range="{x:Null}" AddHeaders="True" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="CREDIT SCORE">
-                                                <ui:ReadRange.DataTable>
-                                                  <OutArgument x:TypeArguments="sd:DataTable">
-                                                    <mca:CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_38">outputDataTable</mca:CSharpReference>
-                                                  </OutArgument>
-                                                </ui:ReadRange.DataTable>
-                                                <ui:ReadRange.WorkbookPath>
-                                                  <InArgument x:TypeArguments="x:String">
-                                                    <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_75">CreditScore</mca:CSharpValue>
-                                                  </InArgument>
-                                                </ui:ReadRange.WorkbookPath>
-                                              </ui:ReadRange>
+                                              </Assign>
                                               <FlowStep.Next>
-                                                <FlowStep x:Name="__ReferenceID1">
+                                                <FlowStep x:Name="__ReferenceID4">
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                      <av:Point x:Key="ShapeLocation">200,974</av:Point>
-                                                      <av:Size x:Key="ShapeSize">200,51</av:Size>
-                                                      <av:PointCollection x:Key="ConnectorLocation">300,1026 300,1050</av:PointCollection>
+                                                      <av:Point x:Key="ShapeLocation">200,1034</av:Point>
+                                                      <av:Size x:Key="ShapeSize">200,52</av:Size>
+                                                      <av:PointCollection x:Key="ConnectorLocation">300,1086 300,1114</av:PointCollection>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
-                                                  <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ForEach`1_5">
-                                                    <ui:ForEach.Body>
-                                                      <ActivityAction x:TypeArguments="x:String">
-                                                        <ActivityAction.Argument>
-                                                          <DelegateInArgument x:TypeArguments="x:String" Name="item" />
-                                                        </ActivityAction.Argument>
-                                                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,744" sap2010:WorkflowViewState.IdRef="Sequence_2">
-                                                          <sap:WorkflowViewStateService.ViewState>
-                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                            </scg:Dictionary>
-                                                          </sap:WorkflowViewStateService.ViewState>
-                                                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke CBS workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="GUARANTOR CBS.xaml">
-                                                            <ui:InvokeWorkflowFile.Arguments>
-                                                              <InArgument x:TypeArguments="x:String" x:Key="CBS">
-                                                                <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">item.ToString()</mca:CSharpValue>
-                                                              </InArgument>
-                                                            </ui:InvokeWorkflowFile.Arguments>
-                                                          </ui:InvokeWorkflowFile>
-                                                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Compare Excel workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Compare Excel for Guarantor files.xaml">
-                                                            <ui:InvokeWorkflowFile.Arguments>
-                                                              <InArgument x:TypeArguments="x:String" x:Key="inputFilePath">Excel output files/GUARANTOR CBS Output.xlsx</InArgument>
-                                                              <InArgument x:TypeArguments="x:Int32" x:Key="count">
-                                                                <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_22">count</mca:CSharpValue>
-                                                              </InArgument>
-                                                              <OutArgument x:TypeArguments="x:Int32" x:Key="value">
-                                                                <mca:CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_23">value</mca:CSharpReference>
-                                                              </OutArgument>
-                                                              <OutArgument x:TypeArguments="scg:ICollection(x:Int32)" x:Key="rowIndexs">
-                                                                <mca:CSharpReference x:TypeArguments="scg:ICollection(x:Int32)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_22">rowIndex</mca:CSharpReference>
-                                                              </OutArgument>
-                                                              <InArgument x:TypeArguments="sd:DataTable" x:Key="outputTable">
-                                                                <mca:CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_54">outputDataTable</mca:CSharpValue>
-                                                              </InArgument>
-                                                              <InArgument x:TypeArguments="x:String" x:Key="CreditScore">
-                                                                <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_80">CreditScore</mca:CSharpValue>
-                                                              </InArgument>
-                                                            </ui:InvokeWorkflowFile.Arguments>
-                                                          </ui:InvokeWorkflowFile>
-                                                          <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="334,248" sap2010:WorkflowViewState.IdRef="ForEach`1_9">
-                                                            <ui:ForEach.Body>
-                                                              <ActivityAction x:TypeArguments="x:Object">
-                                                                <ActivityAction.Argument>
-                                                                  <DelegateInArgument x:TypeArguments="x:Object" Name="item" />
-                                                                </ActivityAction.Argument>
-                                                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_6">
-                                                                  <sap:WorkflowViewStateService.ViewState>
-                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                    </scg:Dictionary>
-                                                                  </sap:WorkflowViewStateService.ViewState>
-                                                                  <ui:RemoveDataRow Row="{x:Null}" DisplayName="Remove Data Row" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="RemoveDataRow_3">
-                                                                    <ui:RemoveDataRow.DataTable>
-                                                                      <InOutArgument x:TypeArguments="sd:DataTable">
-                                                                        <mca:CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_42">outputDataTable</mca:CSharpReference>
-                                                                      </InOutArgument>
-                                                                    </ui:RemoveDataRow.DataTable>
-                                                                    <ui:RemoveDataRow.RowIndex>
-                                                                      <InArgument x:TypeArguments="x:Int32">
-                                                                        <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_61">int.Parse(item.ToString())</mca:CSharpValue>
-                                                                      </InArgument>
-                                                                    </ui:RemoveDataRow.RowIndex>
-                                                                  </ui:RemoveDataRow>
-                                                                </Sequence>
-                                                              </ActivityAction>
-                                                            </ui:ForEach.Body>
-                                                            <ui:ForEach.Values>
-                                                              <InArgument x:TypeArguments="sc:IEnumerable">
-                                                                <mca:CSharpValue x:TypeArguments="sc:IEnumerable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_62">rowIndex.Reverse()</mca:CSharpValue>
-                                                              </InArgument>
-                                                            </ui:ForEach.Values>
-                                                          </ui:ForEach>
-                                                          <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_5">
-                                                            <Assign.To>
-                                                              <OutArgument x:TypeArguments="x:Int32">
-                                                                <mca:CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_25">count</mca:CSharpReference>
-                                                              </OutArgument>
-                                                            </Assign.To>
-                                                            <Assign.Value>
-                                                              <InArgument x:TypeArguments="x:Int32">
-                                                                <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_33">count + value</mca:CSharpValue>
-                                                              </InArgument>
-                                                            </Assign.Value>
-                                                          </Assign>
-                                                        </Sequence>
-                                                      </ActivityAction>
-                                                    </ui:ForEach.Body>
-                                                    <ui:ForEach.Values>
-                                                      <InArgument x:TypeArguments="sc:IEnumerable">
-                                                        <mca:CSharpValue x:TypeArguments="sc:IEnumerable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">CBS</mca:CSharpValue>
+                                                  <ui:ReadRange Range="{x:Null}" AddHeaders="True" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="CREDIT SCORE">
+                                                    <ui:ReadRange.DataTable>
+                                                      <OutArgument x:TypeArguments="sd:DataTable">
+                                                        <mca:CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_38">outputDataTable</mca:CSharpReference>
+                                                      </OutArgument>
+                                                    </ui:ReadRange.DataTable>
+                                                    <ui:ReadRange.WorkbookPath>
+                                                      <InArgument x:TypeArguments="x:String">
+                                                        <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_75">CreditScore</mca:CSharpValue>
                                                       </InArgument>
-                                                    </ui:ForEach.Values>
-                                                  </ui:ForEach>
+                                                    </ui:ReadRange.WorkbookPath>
+                                                  </ui:ReadRange>
                                                   <FlowStep.Next>
-                                                    <FlowStep x:Name="__ReferenceID6">
+                                                    <FlowStep x:Name="__ReferenceID2">
                                                       <sap:WorkflowViewStateService.ViewState>
                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                          <av:Point x:Key="ShapeLocation">169,1050</av:Point>
-                                                          <av:Size x:Key="ShapeSize">262,60</av:Size>
-                                                          <av:PointCollection x:Key="ConnectorLocation">300,1110 300,1134</av:PointCollection>
+                                                          <av:Point x:Key="ShapeLocation">200,1114</av:Point>
+                                                          <av:Size x:Key="ShapeSize">200,52</av:Size>
+                                                          <av:PointCollection x:Key="ConnectorLocation">300,1166 300,1190</av:PointCollection>
                                                         </scg:Dictionary>
                                                       </sap:WorkflowViewStateService.ViewState>
-                                                      <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_9">
-                                                        <Assign.To>
-                                                          <OutArgument x:TypeArguments="x:Int32">
-                                                            <mca:CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_43">count</mca:CSharpReference>
-                                                          </OutArgument>
-                                                        </Assign.To>
-                                                        <Assign.Value>
-                                                          <InArgument x:TypeArguments="x:Int32">0</InArgument>
-                                                        </Assign.Value>
-                                                        <sap:WorkflowViewStateService.ViewState>
-                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                          </scg:Dictionary>
-                                                        </sap:WorkflowViewStateService.ViewState>
-                                                      </Assign>
-                                                      <FlowStep.Next>
-                                                        <FlowStep x:Name="__ReferenceID5">
-                                                          <sap:WorkflowViewStateService.ViewState>
-                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                              <av:Point x:Key="ShapeLocation">200,1134</av:Point>
-                                                              <av:Size x:Key="ShapeSize">200,51</av:Size>
-                                                              <av:PointCollection x:Key="ConnectorLocation">300,1185 300,1214</av:PointCollection>
-                                                            </scg:Dictionary>
-                                                          </sap:WorkflowViewStateService.ViewState>
-                                                          <ui:ReadRange Range="{x:Null}" AddHeaders="True" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ReadRange_3" SheetName="CREDIT SCORE">
-                                                            <ui:ReadRange.DataTable>
-                                                              <OutArgument x:TypeArguments="sd:DataTable">
-                                                                <mca:CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_44">outputDataTable</mca:CSharpReference>
-                                                              </OutArgument>
-                                                            </ui:ReadRange.DataTable>
-                                                            <ui:ReadRange.WorkbookPath>
-                                                              <InArgument x:TypeArguments="x:String">
-                                                                <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_76">CreditScore</mca:CSharpValue>
-                                                              </InArgument>
-                                                            </ui:ReadRange.WorkbookPath>
-                                                          </ui:ReadRange>
-                                                          <FlowStep.Next>
-                                                            <FlowStep x:Name="__ReferenceID2">
+                                                      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="ForEach`1_5">
+                                                        <ui:ForEach.Body>
+                                                          <ActivityAction x:TypeArguments="x:String">
+                                                            <ActivityAction.Argument>
+                                                              <DelegateInArgument x:TypeArguments="x:String" Name="item" />
+                                                            </ActivityAction.Argument>
+                                                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,744" sap2010:WorkflowViewState.IdRef="Sequence_2">
                                                               <sap:WorkflowViewStateService.ViewState>
                                                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                  <av:Point x:Key="ShapeLocation">200,1214</av:Point>
-                                                                  <av:Size x:Key="ShapeSize">200,51</av:Size>
-                                                                  <av:PointCollection x:Key="ConnectorLocation">300,1266 300,1300</av:PointCollection>
+                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                 </scg:Dictionary>
                                                               </sap:WorkflowViewStateService.ViewState>
-                                                              <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ForEach`1_7">
+                                                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke CBS workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="GUARANTOR CBS.xaml">
+                                                                <ui:InvokeWorkflowFile.Arguments>
+                                                                  <InArgument x:TypeArguments="x:String" x:Key="CBS">
+                                                                    <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">item.ToString()</mca:CSharpValue>
+                                                                  </InArgument>
+                                                                </ui:InvokeWorkflowFile.Arguments>
+                                                              </ui:InvokeWorkflowFile>
+                                                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Compare Excel workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_7" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Compare Excel for Guarantor files.xaml">
+                                                                <ui:InvokeWorkflowFile.Arguments>
+                                                                  <InArgument x:TypeArguments="x:String" x:Key="inputFilePath">Excel output files/GUARANTOR CBS Output.xlsx</InArgument>
+                                                                  <InArgument x:TypeArguments="x:Int32" x:Key="count">
+                                                                    <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_22">count</mca:CSharpValue>
+                                                                  </InArgument>
+                                                                  <OutArgument x:TypeArguments="x:Int32" x:Key="value">
+                                                                    <mca:CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_23">value</mca:CSharpReference>
+                                                                  </OutArgument>
+                                                                  <OutArgument x:TypeArguments="scg:ICollection(x:Int32)" x:Key="rowIndexs">
+                                                                    <mca:CSharpReference x:TypeArguments="scg:ICollection(x:Int32)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_22">rowIndex</mca:CSharpReference>
+                                                                  </OutArgument>
+                                                                  <InArgument x:TypeArguments="sd:DataTable" x:Key="outputTable">
+                                                                    <mca:CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_54">outputDataTable</mca:CSharpValue>
+                                                                  </InArgument>
+                                                                  <InArgument x:TypeArguments="x:String" x:Key="CreditScore">
+                                                                    <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_80">CreditScore</mca:CSharpValue>
+                                                                  </InArgument>
+                                                                </ui:InvokeWorkflowFile.Arguments>
+                                                              </ui:InvokeWorkflowFile>
+                                                              <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="334,248" sap2010:WorkflowViewState.IdRef="ForEach`1_9">
                                                                 <ui:ForEach.Body>
-                                                                  <ActivityAction x:TypeArguments="x:String">
+                                                                  <ActivityAction x:TypeArguments="x:Object">
                                                                     <ActivityAction.Argument>
-                                                                      <DelegateInArgument x:TypeArguments="x:String" Name="item" />
+                                                                      <DelegateInArgument x:TypeArguments="x:Object" Name="item" />
                                                                     </ActivityAction.Argument>
-                                                                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,734" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                                                                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_6">
                                                                       <sap:WorkflowViewStateService.ViewState>
                                                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                                         </scg:Dictionary>
                                                                       </sap:WorkflowViewStateService.ViewState>
-                                                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke NOA workflow" sap:VirtualizedContainerService.HintSize="434,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="GUARANTOR NOA.xaml">
-                                                                        <ui:InvokeWorkflowFile.Arguments>
-                                                                          <InArgument x:TypeArguments="x:String" x:Key="NOA">
-                                                                            <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">item.ToString()</mca:CSharpValue>
-                                                                          </InArgument>
-                                                                        </ui:InvokeWorkflowFile.Arguments>
-                                                                      </ui:InvokeWorkflowFile>
-                                                                      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Compare Excel for Guarantor files workflow" sap:VirtualizedContainerService.HintSize="434,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Compare Excel for Guarantor files.xaml">
-                                                                        <ui:InvokeWorkflowFile.Arguments>
-                                                                          <InArgument x:TypeArguments="x:String" x:Key="inputFilePath">Excel output files/GUARANTOR NOA Output.xlsx</InArgument>
-                                                                          <InArgument x:TypeArguments="x:Int32" x:Key="count">
-                                                                            <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_64">count</mca:CSharpValue>
-                                                                          </InArgument>
-                                                                          <OutArgument x:TypeArguments="x:Int32" x:Key="value">
-                                                                            <mca:CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_45">value</mca:CSharpReference>
-                                                                          </OutArgument>
-                                                                          <OutArgument x:TypeArguments="scg:ICollection(x:Int32)" x:Key="rowIndexs">
-                                                                            <mca:CSharpReference x:TypeArguments="scg:ICollection(x:Int32)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_48">rowIndex</mca:CSharpReference>
-                                                                          </OutArgument>
-                                                                          <InArgument x:TypeArguments="sd:DataTable" x:Key="outputTable">
-                                                                            <mca:CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_63">outputDataTable</mca:CSharpValue>
-                                                                          </InArgument>
-                                                                          <InArgument x:TypeArguments="x:String" x:Key="CreditScore">
-                                                                            <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_81">CreditScore</mca:CSharpValue>
-                                                                          </InArgument>
-                                                                        </ui:InvokeWorkflowFile.Arguments>
-                                                                      </ui:InvokeWorkflowFile>
-                                                                      <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="434,238" sap2010:WorkflowViewState.IdRef="ForEach`1_10">
-                                                                        <ui:ForEach.Body>
-                                                                          <ActivityAction x:TypeArguments="x:Object">
-                                                                            <ActivityAction.Argument>
-                                                                              <DelegateInArgument x:TypeArguments="x:Object" Name="item" />
-                                                                            </ActivityAction.Argument>
-                                                                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_7">
-                                                                              <sap:WorkflowViewStateService.ViewState>
-                                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                                </scg:Dictionary>
-                                                                              </sap:WorkflowViewStateService.ViewState>
-                                                                              <ui:RemoveDataRow Row="{x:Null}" DisplayName="Remove Data Row" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="RemoveDataRow_4">
-                                                                                <ui:RemoveDataRow.DataTable>
-                                                                                  <InOutArgument x:TypeArguments="sd:DataTable">
-                                                                                    <mca:CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_46">outputDataTable</mca:CSharpReference>
-                                                                                  </InOutArgument>
-                                                                                </ui:RemoveDataRow.DataTable>
-                                                                                <ui:RemoveDataRow.RowIndex>
-                                                                                  <InArgument x:TypeArguments="x:Int32">
-                                                                                    <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_66">int.Parse(item.ToString())</mca:CSharpValue>
-                                                                                  </InArgument>
-                                                                                </ui:RemoveDataRow.RowIndex>
-                                                                              </ui:RemoveDataRow>
-                                                                            </Sequence>
-                                                                          </ActivityAction>
-                                                                        </ui:ForEach.Body>
-                                                                        <ui:ForEach.Values>
-                                                                          <InArgument x:TypeArguments="sc:IEnumerable">
-                                                                            <mca:CSharpValue x:TypeArguments="sc:IEnumerable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_67">rowIndex</mca:CSharpValue>
-                                                                          </InArgument>
-                                                                        </ui:ForEach.Values>
-                                                                      </ui:ForEach>
-                                                                      <Assign sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_10">
-                                                                        <Assign.To>
-                                                                          <OutArgument x:TypeArguments="x:Int32">
-                                                                            <mca:CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_47">count</mca:CSharpReference>
-                                                                          </OutArgument>
-                                                                        </Assign.To>
-                                                                        <Assign.Value>
+                                                                      <ui:RemoveDataRow Row="{x:Null}" DisplayName="Remove Data Row" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="RemoveDataRow_3">
+                                                                        <ui:RemoveDataRow.DataTable>
+                                                                          <InOutArgument x:TypeArguments="sd:DataTable">
+                                                                            <mca:CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_42">outputDataTable</mca:CSharpReference>
+                                                                          </InOutArgument>
+                                                                        </ui:RemoveDataRow.DataTable>
+                                                                        <ui:RemoveDataRow.RowIndex>
                                                                           <InArgument x:TypeArguments="x:Int32">
-                                                                            <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_68">count + value</mca:CSharpValue>
+                                                                            <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_61">int.Parse(item.ToString())</mca:CSharpValue>
                                                                           </InArgument>
-                                                                        </Assign.Value>
-                                                                      </Assign>
+                                                                        </ui:RemoveDataRow.RowIndex>
+                                                                      </ui:RemoveDataRow>
                                                                     </Sequence>
                                                                   </ActivityAction>
                                                                 </ui:ForEach.Body>
                                                                 <ui:ForEach.Values>
                                                                   <InArgument x:TypeArguments="sc:IEnumerable">
-                                                                    <mca:CSharpValue x:TypeArguments="sc:IEnumerable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_14">NOA</mca:CSharpValue>
+                                                                    <mca:CSharpValue x:TypeArguments="sc:IEnumerable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_62">rowIndex.Reverse()</mca:CSharpValue>
                                                                   </InArgument>
                                                                 </ui:ForEach.Values>
                                                               </ui:ForEach>
+                                                              <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+                                                                <Assign.To>
+                                                                  <OutArgument x:TypeArguments="x:Int32">
+                                                                    <mca:CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_25">count</mca:CSharpReference>
+                                                                  </OutArgument>
+                                                                </Assign.To>
+                                                                <Assign.Value>
+                                                                  <InArgument x:TypeArguments="x:Int32">
+                                                                    <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_33">count + value</mca:CSharpValue>
+                                                                  </InArgument>
+                                                                </Assign.Value>
+                                                              </Assign>
+                                                            </Sequence>
+                                                          </ActivityAction>
+                                                        </ui:ForEach.Body>
+                                                        <ui:ForEach.Values>
+                                                          <InArgument x:TypeArguments="sc:IEnumerable">
+                                                            <mca:CSharpValue x:TypeArguments="sc:IEnumerable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">CBS</mca:CSharpValue>
+                                                          </InArgument>
+                                                        </ui:ForEach.Values>
+                                                      </ui:ForEach>
+                                                      <FlowStep.Next>
+                                                        <FlowStep x:Name="__ReferenceID7">
+                                                          <sap:WorkflowViewStateService.ViewState>
+                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                              <av:Point x:Key="ShapeLocation">169,1190</av:Point>
+                                                              <av:Size x:Key="ShapeSize">262,60</av:Size>
+                                                              <av:PointCollection x:Key="ConnectorLocation">300,1250 300,1274</av:PointCollection>
+                                                            </scg:Dictionary>
+                                                          </sap:WorkflowViewStateService.ViewState>
+                                                          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+                                                            <Assign.To>
+                                                              <OutArgument x:TypeArguments="x:Int32">
+                                                                <mca:CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_43">count</mca:CSharpReference>
+                                                              </OutArgument>
+                                                            </Assign.To>
+                                                            <Assign.Value>
+                                                              <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                                                            </Assign.Value>
+                                                            <sap:WorkflowViewStateService.ViewState>
+                                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                              </scg:Dictionary>
+                                                            </sap:WorkflowViewStateService.ViewState>
+                                                          </Assign>
+                                                          <FlowStep.Next>
+                                                            <FlowStep x:Name="__ReferenceID6">
+                                                              <sap:WorkflowViewStateService.ViewState>
+                                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                  <av:Point x:Key="ShapeLocation">200,1274</av:Point>
+                                                                  <av:Size x:Key="ShapeSize">200,52</av:Size>
+                                                                  <av:PointCollection x:Key="ConnectorLocation">300,1326 300,1354</av:PointCollection>
+                                                                </scg:Dictionary>
+                                                              </sap:WorkflowViewStateService.ViewState>
+                                                              <ui:ReadRange Range="{x:Null}" AddHeaders="True" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="ReadRange_3" SheetName="CREDIT SCORE">
+                                                                <ui:ReadRange.DataTable>
+                                                                  <OutArgument x:TypeArguments="sd:DataTable">
+                                                                    <mca:CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_44">outputDataTable</mca:CSharpReference>
+                                                                  </OutArgument>
+                                                                </ui:ReadRange.DataTable>
+                                                                <ui:ReadRange.WorkbookPath>
+                                                                  <InArgument x:TypeArguments="x:String">
+                                                                    <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_76">CreditScore</mca:CSharpValue>
+                                                                  </InArgument>
+                                                                </ui:ReadRange.WorkbookPath>
+                                                              </ui:ReadRange>
                                                               <FlowStep.Next>
-                                                                <FlowStep x:Name="__ReferenceID13">
+                                                                <FlowStep x:Name="__ReferenceID3">
                                                                   <sap:WorkflowViewStateService.ViewState>
                                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                      <av:Point x:Key="ShapeLocation">169,1300</av:Point>
-                                                                      <av:Size x:Key="ShapeSize">262,60</av:Size>
-                                                                      <av:PointCollection x:Key="ConnectorLocation">516.5,752 516.5,776</av:PointCollection>
+                                                                      <av:Point x:Key="ShapeLocation">200,1354</av:Point>
+                                                                      <av:Size x:Key="ShapeSize">200,52</av:Size>
+                                                                      <av:PointCollection x:Key="ConnectorLocation">300,1406 300,1440</av:PointCollection>
                                                                     </scg:Dictionary>
                                                                   </sap:WorkflowViewStateService.ViewState>
-                                                                  <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_11">
-                                                                    <Assign.To>
-                                                                      <OutArgument x:TypeArguments="x:Int32">
-                                                                        <mca:CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_52">count</mca:CSharpReference>
-                                                                      </OutArgument>
-                                                                    </Assign.To>
-                                                                    <Assign.Value>
-                                                                      <InArgument x:TypeArguments="x:Int32">0</InArgument>
-                                                                    </Assign.Value>
-                                                                    <sap:WorkflowViewStateService.ViewState>
-                                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                                      </scg:Dictionary>
-                                                                    </sap:WorkflowViewStateService.ViewState>
-                                                                  </Assign>
+                                                                  <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="ForEach`1_7">
+                                                                    <ui:ForEach.Body>
+                                                                      <ActivityAction x:TypeArguments="x:String">
+                                                                        <ActivityAction.Argument>
+                                                                          <DelegateInArgument x:TypeArguments="x:String" Name="item" />
+                                                                        </ActivityAction.Argument>
+                                                                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,734" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                                                                          <sap:WorkflowViewStateService.ViewState>
+                                                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                            </scg:Dictionary>
+                                                                          </sap:WorkflowViewStateService.ViewState>
+                                                                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke NOA workflow" sap:VirtualizedContainerService.HintSize="434,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="GUARANTOR NOA.xaml">
+                                                                            <ui:InvokeWorkflowFile.Arguments>
+                                                                              <InArgument x:TypeArguments="x:String" x:Key="NOA">
+                                                                                <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">item.ToString()</mca:CSharpValue>
+                                                                              </InArgument>
+                                                                            </ui:InvokeWorkflowFile.Arguments>
+                                                                          </ui:InvokeWorkflowFile>
+                                                                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Compare Excel for Guarantor files workflow" sap:VirtualizedContainerService.HintSize="434,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_8" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Compare Excel for Guarantor files.xaml">
+                                                                            <ui:InvokeWorkflowFile.Arguments>
+                                                                              <InArgument x:TypeArguments="x:String" x:Key="inputFilePath">Excel output files/GUARANTOR NOA Output.xlsx</InArgument>
+                                                                              <InArgument x:TypeArguments="x:Int32" x:Key="count">
+                                                                                <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_64">count</mca:CSharpValue>
+                                                                              </InArgument>
+                                                                              <OutArgument x:TypeArguments="x:Int32" x:Key="value">
+                                                                                <mca:CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_45">value</mca:CSharpReference>
+                                                                              </OutArgument>
+                                                                              <OutArgument x:TypeArguments="scg:ICollection(x:Int32)" x:Key="rowIndexs">
+                                                                                <mca:CSharpReference x:TypeArguments="scg:ICollection(x:Int32)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_48">rowIndex</mca:CSharpReference>
+                                                                              </OutArgument>
+                                                                              <InArgument x:TypeArguments="sd:DataTable" x:Key="outputTable">
+                                                                                <mca:CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_63">outputDataTable</mca:CSharpValue>
+                                                                              </InArgument>
+                                                                              <InArgument x:TypeArguments="x:String" x:Key="CreditScore">
+                                                                                <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_81">CreditScore</mca:CSharpValue>
+                                                                              </InArgument>
+                                                                            </ui:InvokeWorkflowFile.Arguments>
+                                                                          </ui:InvokeWorkflowFile>
+                                                                          <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="434,238" sap2010:WorkflowViewState.IdRef="ForEach`1_10">
+                                                                            <ui:ForEach.Body>
+                                                                              <ActivityAction x:TypeArguments="x:Object">
+                                                                                <ActivityAction.Argument>
+                                                                                  <DelegateInArgument x:TypeArguments="x:Object" Name="item" />
+                                                                                </ActivityAction.Argument>
+                                                                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                                                                                  <sap:WorkflowViewStateService.ViewState>
+                                                                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                                    </scg:Dictionary>
+                                                                                  </sap:WorkflowViewStateService.ViewState>
+                                                                                  <ui:RemoveDataRow Row="{x:Null}" DisplayName="Remove Data Row" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="RemoveDataRow_4">
+                                                                                    <ui:RemoveDataRow.DataTable>
+                                                                                      <InOutArgument x:TypeArguments="sd:DataTable">
+                                                                                        <mca:CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_46">outputDataTable</mca:CSharpReference>
+                                                                                      </InOutArgument>
+                                                                                    </ui:RemoveDataRow.DataTable>
+                                                                                    <ui:RemoveDataRow.RowIndex>
+                                                                                      <InArgument x:TypeArguments="x:Int32">
+                                                                                        <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_66">int.Parse(item.ToString())</mca:CSharpValue>
+                                                                                      </InArgument>
+                                                                                    </ui:RemoveDataRow.RowIndex>
+                                                                                  </ui:RemoveDataRow>
+                                                                                </Sequence>
+                                                                              </ActivityAction>
+                                                                            </ui:ForEach.Body>
+                                                                            <ui:ForEach.Values>
+                                                                              <InArgument x:TypeArguments="sc:IEnumerable">
+                                                                                <mca:CSharpValue x:TypeArguments="sc:IEnumerable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_67">rowIndex</mca:CSharpValue>
+                                                                              </InArgument>
+                                                                            </ui:ForEach.Values>
+                                                                          </ui:ForEach>
+                                                                          <Assign sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+                                                                            <Assign.To>
+                                                                              <OutArgument x:TypeArguments="x:Int32">
+                                                                                <mca:CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_47">count</mca:CSharpReference>
+                                                                              </OutArgument>
+                                                                            </Assign.To>
+                                                                            <Assign.Value>
+                                                                              <InArgument x:TypeArguments="x:Int32">
+                                                                                <mca:CSharpValue x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpValue`1_68">count + value</mca:CSharpValue>
+                                                                              </InArgument>
+                                                                            </Assign.Value>
+                                                                          </Assign>
+                                                                        </Sequence>
+                                                                      </ActivityAction>
+                                                                    </ui:ForEach.Body>
+                                                                    <ui:ForEach.Values>
+                                                                      <InArgument x:TypeArguments="sc:IEnumerable">
+                                                                        <mca:CSharpValue x:TypeArguments="sc:IEnumerable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_14">NOA</mca:CSharpValue>
+                                                                      </InArgument>
+                                                                    </ui:ForEach.Values>
+                                                                  </ui:ForEach>
+                                                                  <FlowStep.Next>
+                                                                    <FlowStep x:Name="__ReferenceID13">
+                                                                      <sap:WorkflowViewStateService.ViewState>
+                                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                          <av:Point x:Key="ShapeLocation">169,1440</av:Point>
+                                                                          <av:Size x:Key="ShapeSize">262,60</av:Size>
+                                                                          <av:PointCollection x:Key="ConnectorLocation">516.5,752 516.5,776</av:PointCollection>
+                                                                        </scg:Dictionary>
+                                                                      </sap:WorkflowViewStateService.ViewState>
+                                                                      <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+                                                                        <Assign.To>
+                                                                          <OutArgument x:TypeArguments="x:Int32">
+                                                                            <mca:CSharpReference x:TypeArguments="x:Int32" sap2010:WorkflowViewState.IdRef="CSharpReference`1_52">count</mca:CSharpReference>
+                                                                          </OutArgument>
+                                                                        </Assign.To>
+                                                                        <Assign.Value>
+                                                                          <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                                                                        </Assign.Value>
+                                                                        <sap:WorkflowViewStateService.ViewState>
+                                                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                                          </scg:Dictionary>
+                                                                        </sap:WorkflowViewStateService.ViewState>
+                                                                      </Assign>
+                                                                    </FlowStep>
+                                                                  </FlowStep.Next>
                                                                 </FlowStep>
                                                               </FlowStep.Next>
                                                             </FlowStep>
@@ -749,8 +770,34 @@
                             </FlowStep>
                           </FlowStep.Next>
                         </FlowStep>
-                      </FlowStep.Next>
-                    </FlowStep>
+                      </FlowDecision.True>
+                      <FlowDecision.False>
+                        <FlowStep x:Name="__ReferenceID12">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <av:Point x:Key="ShapeLocation">360,494</av:Point>
+                              <av:Size x:Key="ShapeSize">200,52</av:Size>
+                              <av:PointCollection x:Key="ConnectorLocation">460,546 460,576 300,576 300,614</av:PointCollection>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Financial Statement workflow" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Financial Statement.xaml">
+                            <ui:InvokeWorkflowFile.Arguments>
+                              <InArgument x:TypeArguments="x:String" x:Key="FinancialStatementPath">
+                                <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_72">FinancialStatement</mca:CSharpValue>
+                              </InArgument>
+                            </ui:InvokeWorkflowFile.Arguments>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:InvokeWorkflowFile>
+                          <FlowStep.Next>
+                            <x:Reference>__ReferenceID0</x:Reference>
+                          </FlowStep.Next>
+                        </FlowStep>
+                      </FlowDecision.False>
+                    </FlowDecision>
                   </FlowStep.Next>
                 </FlowStep>
               </FlowStep.Next>
@@ -759,7 +806,6 @@
         </FlowStep>
       </FlowStep.Next>
     </FlowStep>
-    <x:Reference>__ReferenceID0</x:Reference>
     <x:Reference>__ReferenceID1</x:Reference>
     <x:Reference>__ReferenceID2</x:Reference>
     <x:Reference>__ReferenceID3</x:Reference>
@@ -772,7 +818,10 @@
     <x:Reference>__ReferenceID10</x:Reference>
     <x:Reference>__ReferenceID11</x:Reference>
     <x:Reference>__ReferenceID12</x:Reference>
+    <x:Reference>__ReferenceID0</x:Reference>
     <x:Reference>__ReferenceID13</x:Reference>
     <x:Reference>__ReferenceID14</x:Reference>
+    <x:Reference>__ReferenceID15</x:Reference>
+    <x:Reference>__ReferenceID16</x:Reference>
   </Flowchart>
 </Activity>

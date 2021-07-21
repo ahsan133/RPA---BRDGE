@@ -8,9 +8,10 @@
     <x:Property Name="CompanyPath" Type="InArgument(x:String)" />
     <x:Property Name="FinancialStatement" Type="OutArgument(x:String)" />
     <x:Property Name="CreditScore" Type="OutArgument(x:String)" />
+    <x:Property Name="IsFinancialStatementFolder" Type="InArgument(x:Boolean)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>1550,4057</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1550,4649</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -84,7 +85,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="FileSystem" sap:VirtualizedContainerService.HintSize="1560,3892" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="FileSystem" sap:VirtualizedContainerService.HintSize="1560,4484" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:Int32" Name="index" />
       <Variable x:TypeArguments="x:Int32" Name="latestNOA" />
@@ -95,19 +96,19 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1518,427" sap2010:WorkflowViewState.IdRef="ForEach`1_2">
+    <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1518,869" sap2010:WorkflowViewState.IdRef="ForEach`1_2">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="item" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,302" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="653,744" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If sap:VirtualizedContainerService.HintSize="484,210" sap2010:WorkflowViewState.IdRef="If_1">
+            <If sap:VirtualizedContainerService.HintSize="611,210" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Condition>
                 <InArgument x:TypeArguments="x:Boolean">
                   <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">item.ToString().Contains("BANK STATEMENTS")</mca:CSharpValue>
@@ -127,6 +128,56 @@
                   </Assign.Value>
                 </Assign>
               </If.Then>
+            </If>
+            <If sap:VirtualizedContainerService.HintSize="611,402" sap2010:WorkflowViewState.IdRef="If_13">
+              <If.Condition>
+                <InArgument x:TypeArguments="x:Boolean">
+                  <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_82">item.ToString().ToLower().Contains("financial statement")</mca:CSharpValue>
+                </InArgument>
+              </If.Condition>
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="304,252" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_7">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Boolean">
+                        <mca:CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_22">IsFinancialStatementFolder</mca:CSharpReference>
+                      </OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">
+                        <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_24">FinancialStatement</mca:CSharpReference>
+                      </OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">
+                        <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_83">item.ToString()</mca:CSharpValue>
+                      </InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="x:Boolean">
+                      <mca:CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_23">IsFinancialStatementFolder</mca:CSharpReference>
+                    </OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </If.Else>
             </If>
           </Sequence>
         </ActivityAction>
@@ -191,19 +242,19 @@
         </scg:List>
       </ui:MultipleAssign.AssignOperations>
     </ui:MultipleAssign>
-    <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1518,1677" sap2010:WorkflowViewState.IdRef="ForEach`1_1">
+    <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1518,1827" sap2010:WorkflowViewState.IdRef="ForEach`1_1">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="item" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,1552" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="671,1702" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If sap:VirtualizedContainerService.HintSize="484,210" sap2010:WorkflowViewState.IdRef="If_11">
+            <If sap:VirtualizedContainerService.HintSize="629,210" sap2010:WorkflowViewState.IdRef="If_11">
               <If.Condition>
                 <InArgument x:TypeArguments="x:Boolean">
                   <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_76">item.ToString().Contains("Credit Score Enhancement")</mca:CSharpValue>
@@ -224,28 +275,37 @@
                 </Assign>
               </If.Then>
             </If>
-            <If sap:VirtualizedContainerService.HintSize="484,210" sap2010:WorkflowViewState.IdRef="If_9">
+            <If sap:VirtualizedContainerService.HintSize="629,360" sap2010:WorkflowViewState.IdRef="If_14">
               <If.Condition>
                 <InArgument x:TypeArguments="x:Boolean">
-                  <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_71">item.ToString().ToLower().Contains("financial statement")</mca:CSharpValue>
+                  <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_84">IsFinancialStatementFolder == false</mca:CSharpValue>
                 </InArgument>
               </If.Condition>
               <If.Then>
-                <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_5">
-                  <Assign.To>
-                    <OutArgument x:TypeArguments="x:String">
-                      <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_20">FinancialStatement</mca:CSharpReference>
-                    </OutArgument>
-                  </Assign.To>
-                  <Assign.Value>
-                    <InArgument x:TypeArguments="x:String">
-                      <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_72">item.ToString()</mca:CSharpValue>
+                <If sap:VirtualizedContainerService.HintSize="484,210" sap2010:WorkflowViewState.IdRef="If_9">
+                  <If.Condition>
+                    <InArgument x:TypeArguments="x:Boolean">
+                      <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_71">item.ToString().ToLower().Contains("financial statement")</mca:CSharpValue>
                     </InArgument>
-                  </Assign.Value>
-                </Assign>
+                  </If.Condition>
+                  <If.Then>
+                    <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">
+                          <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_20">FinancialStatement</mca:CSharpReference>
+                        </OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">
+                          <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_72">item.ToString()</mca:CSharpValue>
+                        </InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </If.Then>
+                </If>
               </If.Then>
             </If>
-            <If sap:VirtualizedContainerService.HintSize="484,210" sap2010:WorkflowViewState.IdRef="If_8">
+            <If sap:VirtualizedContainerService.HintSize="629,210" sap2010:WorkflowViewState.IdRef="If_8">
               <If.Condition>
                 <InArgument x:TypeArguments="x:Boolean">
                   <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_70">item.ToString().Contains("COMPANY") &amp;&amp; item.ToString().Contains("ACRA") &amp;&amp; !item.ToString().Contains("GUARANTOR")</mca:CSharpValue>
