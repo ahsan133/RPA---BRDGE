@@ -1,9 +1,9 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Financial_Statement" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System" xmlns:scg1="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Financial_Statement" this:Financial_Statement.FinancialStatementPath="C:\Users\bridgelabz\Desktop\FINANCIAL STATEMENTS\COMPANY 9\COMPANY Financial Statement 2019.pdf" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mca="clr-namespace:Microsoft.CSharp.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System" xmlns:scg1="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="FinancialStatementPath" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>689,2839</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1814,5257</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -95,7 +95,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Financial_Statement" sap:VirtualizedContainerService.HintSize="563,2674" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Financial_Statement" sap:VirtualizedContainerService.HintSize="1824,5092" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="FinancialData" />
       <Variable x:TypeArguments="scg1:IEnumerable(scg1:KeyValuePair(sd1:Rectangle, x:String))" Name="fin" />
@@ -116,21 +116,21 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg1:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:BuildDataTable DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="521,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Field&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Value&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Field&gt;Net Profit&lt;/Field&gt;&#xA;    &lt;Value&gt;(?&amp;lt;=(income|loss|Profit|Loss|profit|Income)\sfor\sthe\syear\s).*(?=\s.*\s\s)&lt;/Value&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Field&gt;Current Assets&lt;/Field&gt;&#xA;    &lt;Value&gt;(?&amp;lt;=(Total\scurrent\sassets\s|Total\sCurrent\sAssets\s)).*?(?=\n)&lt;/Value&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Field&gt;Current Liabilities&lt;/Field&gt;&#xA;    &lt;Value&gt;(?&amp;lt;=Total\s(current|Current)\s(liabilities|liability|Liabilities)\s).*?(?=\n)&lt;/Value&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Field&gt;Non-Current Liabilities&lt;/Field&gt;&#xA;    &lt;Value&gt;(?&amp;lt;=(Total\snon-current\sliabilities\s|Total\sNon-Current\sLiabilities\s)).*?(?=\n)&lt;/Value&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Field&gt;Capital&lt;/Field&gt;&#xA;    &lt;Value&gt;(?&amp;lt;=(Total|Net)\s(equity|Equity)\s).*?(?=\n)&lt;/Value&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;">
+    <ui:BuildDataTable DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="1782,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Field&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Value&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;Field&gt;Net Profit&lt;/Field&gt;&#xD;&#xA;    &lt;Value&gt;(?&amp;lt;=(income|loss|Profit|Loss|profit|Income)\sfor\sthe\syear\s).*(?=\s.*\s\s)&lt;/Value&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;Field&gt;Current Assets&lt;/Field&gt;&#xD;&#xA;    &lt;Value&gt;(?&amp;lt;=(Total\scurrent\sassets\s|Total\sCurrent\sAssets\s)).*?(?=\n)&lt;/Value&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;Field&gt;Current Liabilities&lt;/Field&gt;&#xD;&#xA;    &lt;Value&gt;(?&amp;lt;=Total\s(current|Current)\s(liabilities|liability|Liabilities)\s).*?(?=\n)&lt;/Value&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;Field&gt;Non-Current Liabilities&lt;/Field&gt;&#xD;&#xA;    &lt;Value&gt;(?&amp;lt;=(Total\snon-current\sliabilities\s|Total\sNon-Current\sLiabilities\s)).*?(?=\n)&lt;/Value&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;Field&gt;Capital&lt;/Field&gt;&#xD;&#xA;    &lt;Value&gt;(?&amp;lt;=(Total|Net)\s(equity|Equity)\s).*?(?=\n)&lt;/Value&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;&lt;/NewDataSet&gt;">
       <ui:BuildDataTable.DataTable>
         <OutArgument x:TypeArguments="sd:DataTable">
           <mca:CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_5">RegexTable</mca:CSharpReference>
         </OutArgument>
       </ui:BuildDataTable.DataTable>
     </ui:BuildDataTable>
-    <ui:BuildDataTable DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="521,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Field&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Value&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
+    <ui:BuildDataTable DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="1782,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Field&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Value&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
       <ui:BuildDataTable.DataTable>
         <OutArgument x:TypeArguments="sd:DataTable">
           <mca:CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_6">outputTable</mca:CSharpReference>
         </OutArgument>
       </ui:BuildDataTable.DataTable>
     </ui:BuildDataTable>
-    <Assign sap:VirtualizedContainerService.HintSize="521,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign sap:VirtualizedContainerService.HintSize="1782,60" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="scg:SortedDictionary(x:String, x:Double)">
           <mca:CSharpReference x:TypeArguments="scg:SortedDictionary(x:String, x:Double)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_8">Dictionary</mca:CSharpReference>
@@ -142,7 +142,7 @@
         </InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ReadPDFText PreserveFormatting="{x:Null}" DisplayName="Read PDF Text" sap:VirtualizedContainerService.HintSize="521,59" sap2010:WorkflowViewState.IdRef="ReadPDFText_1" Range="All">
+    <ui:ReadPDFText PreserveFormatting="{x:Null}" DisplayName="Read PDF Text" sap:VirtualizedContainerService.HintSize="1782,59" sap2010:WorkflowViewState.IdRef="ReadPDFText_1" Range="All">
       <ui:ReadPDFText.FileName>
         <InArgument x:TypeArguments="x:String">
           <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_213">FinancialStatementPath</mca:CSharpValue>
@@ -154,7 +154,7 @@
         </OutArgument>
       </ui:ReadPDFText.Text>
     </ui:ReadPDFText>
-    <ui:Matches sap:VirtualizedContainerService.HintSize="521,59" sap2010:WorkflowViewState.IdRef="Matches_11" IsBuilderTabModified="False" Pattern="(JASCORP\sENTERPRISE\sPTE.\sLTD.)" RegexOption="IgnoreCase, Compiled">
+    <ui:Matches sap:VirtualizedContainerService.HintSize="1782,59" sap2010:WorkflowViewState.IdRef="Matches_11" IsBuilderTabModified="False" Pattern="(JASCORP\sENTERPRISE\sPTE.\sLTD.)" RegexOption="IgnoreCase, Compiled">
       <ui:Matches.Input>
         <InArgument x:TypeArguments="x:String">
           <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_161">extractedBankStatement</mca:CSharpValue>
@@ -166,7 +166,7 @@
         </OutArgument>
       </ui:Matches.Result>
     </ui:Matches>
-    <ui:Matches sap:VirtualizedContainerService.HintSize="521,59" sap2010:WorkflowViewState.IdRef="Matches_17" IsBuilderTabModified="False" Pattern="(Mary\sChia\sHoldings\sLimited)" RegexOption="IgnoreCase, Compiled">
+    <ui:Matches sap:VirtualizedContainerService.HintSize="1590,59" sap2010:WorkflowViewState.IdRef="Matches_17" IsBuilderTabModified="False" Pattern="(Mary\sChia\sHoldings\sLimited)" RegexOption="IgnoreCase, Compiled">
       <ui:Matches.Input>
         <InArgument x:TypeArguments="x:String">
           <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_219">extractedBankStatement</mca:CSharpValue>
@@ -178,7 +178,7 @@
         </OutArgument>
       </ui:Matches.Result>
     </ui:Matches>
-    <ui:Matches sap:VirtualizedContainerService.HintSize="521,59" sap2010:WorkflowViewState.IdRef="Matches_19" IsBuilderTabModified="False" Pattern="(VRV\sGLOBAL\sPTE\sLTD)" RegexOption="IgnoreCase, Compiled">
+    <ui:Matches sap:VirtualizedContainerService.HintSize="1590,59" sap2010:WorkflowViewState.IdRef="Matches_19" IsBuilderTabModified="False" Pattern="(VRV\sGLOBAL\sPTE\sLTD)" RegexOption="IgnoreCase, Compiled">
       <ui:Matches.Input>
         <InArgument x:TypeArguments="x:String">
           <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_246">extractedBankStatement</mca:CSharpValue>
@@ -190,7 +190,7 @@
         </OutArgument>
       </ui:Matches.Result>
     </ui:Matches>
-    <If sap:VirtualizedContainerService.HintSize="521,493" sap2010:WorkflowViewState.IdRef="If_46">
+    <If sap:VirtualizedContainerService.HintSize="1590,493" sap2010:WorkflowViewState.IdRef="If_46">
       <If.Condition>
         <InArgument x:TypeArguments="x:Boolean">
           <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_247">IsVRV.Count() != 0</mca:CSharpValue>
@@ -207,14 +207,14 @@
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg1:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:BuildDataTable DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_8" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Field&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Value&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;Field&gt;Net Profit&lt;/Field&gt;&#xD;&#xA;    &lt;Value&gt;(?&amp;lt;=GROSS\sPROFIT\s).*?(?=\n)&lt;/Value&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;Field&gt;Current Liabilities&lt;/Field&gt;&#xD;&#xA;    &lt;Value&gt;(?&amp;lt;=Total\sLiabilities\s).*?(?=\s)&lt;/Value&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;Field&gt;Capital&lt;/Field&gt;&#xD;&#xA;    &lt;Value&gt;(?&amp;lt;=Total\sequity\sand\sreserves\s).*?(?=\s)&lt;/Value&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;Field&gt;Total Assets&lt;/Field&gt;&#xD;&#xA;    &lt;Value&gt;(?&amp;lt;=Total\sAssets\s).*?(?=\n)&lt;/Value&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;Field&gt;Non-Current Assets&lt;/Field&gt;&#xD;&#xA;    &lt;Value&gt;(?&amp;lt;=Non-current\sassets\s)[\w\W]*?(?=\s\s\s\sCurrent\sAssets)&lt;/Value&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;&lt;/NewDataSet&gt;">
+          <ui:BuildDataTable DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="BuildDataTable_8" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Field&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Value&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Field&gt;Net Profit&lt;/Field&gt;&#xA;    &lt;Value&gt;(?&amp;lt;=GROSS\sPROFIT\s).*?(?=\n)&lt;/Value&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Field&gt;Current Liabilities&lt;/Field&gt;&#xA;    &lt;Value&gt;(?&amp;lt;=Total\sLiabilities\s).*?(?=\s)&lt;/Value&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Field&gt;Capital&lt;/Field&gt;&#xA;    &lt;Value&gt;(?&amp;lt;=Total\sequity\sand\sreserves\s).*?(?=\s)&lt;/Value&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Field&gt;Total Assets&lt;/Field&gt;&#xA;    &lt;Value&gt;(?&amp;lt;=Total\sAssets\s).*?(?=\n)&lt;/Value&gt;&#xA;  &lt;/TableName&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Field&gt;Non-Current Assets&lt;/Field&gt;&#xA;    &lt;Value&gt;(?&amp;lt;=Non-current\sassets\s)[\w\W]*?(?=\s\s\s\sCurrent\sAssets)&lt;/Value&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;">
             <ui:BuildDataTable.DataTable>
               <OutArgument x:TypeArguments="sd:DataTable">
                 <mca:CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_113">RegexTable</mca:CSharpReference>
               </OutArgument>
             </ui:BuildDataTable.DataTable>
           </ui:BuildDataTable>
-          <ui:ForEachRow DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
+          <ui:ForEachRow ColumnNames="{x:Null}" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
             <ui:ForEachRow.Body>
               <ActivityAction x:TypeArguments="sd:DataRow">
                 <ActivityAction.Argument>
@@ -484,7 +484,7 @@
         </Sequence>
       </If.Then>
     </If>
-    <If sap:VirtualizedContainerService.HintSize="521,393" sap2010:WorkflowViewState.IdRef="If_38">
+    <If sap:VirtualizedContainerService.HintSize="1590,393" sap2010:WorkflowViewState.IdRef="If_38">
       <If.Condition>
         <InArgument x:TypeArguments="x:Boolean">
           <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_221">IsMaryChia.Count() != 0</mca:CSharpValue>
@@ -511,7 +511,7 @@
               </OutArgument>
             </ui:BuildDataTable.DataTable>
           </ui:BuildDataTable>
-          <ui:ForEachRow DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
+          <ui:ForEachRow ColumnNames="{x:Null}" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="874,1530" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
             <ui:ForEachRow.Body>
               <ActivityAction x:TypeArguments="sd:DataRow">
                 <ActivityAction.Argument>
@@ -722,7 +722,7 @@
         </Sequence>
       </If.Then>
     </If>
-    <If sap:VirtualizedContainerService.HintSize="521,393" sap2010:WorkflowViewState.IdRef="If_27">
+    <If sap:VirtualizedContainerService.HintSize="1590,393" sap2010:WorkflowViewState.IdRef="If_27">
       <If.Condition>
         <InArgument x:TypeArguments="x:Boolean">
           <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_162">IsJascorp.Count() != 0</mca:CSharpValue>
@@ -749,7 +749,7 @@
               </OutArgument>
             </ui:BuildDataTable.DataTable>
           </ui:BuildDataTable>
-          <ui:ForEachRow DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+          <ui:ForEachRow ColumnNames="{x:Null}" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
             <ui:ForEachRow.Body>
               <ActivityAction x:TypeArguments="sd:DataRow">
                 <ActivityAction.Argument>
@@ -1240,26 +1240,26 @@
         </Sequence>
       </If.Then>
     </If>
-    <If sap:VirtualizedContainerService.HintSize="521,210" sap2010:WorkflowViewState.IdRef="If_47">
+    <If sap:VirtualizedContainerService.HintSize="1782,2628" sap2010:WorkflowViewState.IdRef="If_47">
       <If.Condition>
         <InArgument x:TypeArguments="x:Boolean">
           <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_248">IsJascorp.Count() == 0 &amp;&amp; IsMaryChia.Count() == 0 &amp;&amp; IsVRV.Count() == 0</mca:CSharpValue>
         </InArgument>
       </If.Condition>
       <If.Then>
-        <ui:ForEachRow DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+        <ui:ForEachRow ColumnNames="{x:Null}" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="1637,2478" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
           <ui:ForEachRow.Body>
             <ActivityAction x:TypeArguments="sd:DataRow">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,519" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1603,2303" sap2010:WorkflowViewState.IdRef="Sequence_2">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg1:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg1:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <ui:Matches sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="Matches_1" IsBuilderTabModified="False" RegexOption="IgnoreCase, Compiled">
+                <ui:Matches sap:VirtualizedContainerService.HintSize="1561,59" sap2010:WorkflowViewState.IdRef="Matches_1" IsBuilderTabModified="False" RegexOption="IgnoreCase, Compiled">
                   <ui:Matches.Input>
                     <InArgument x:TypeArguments="x:String">
                       <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">extractedBankStatement</mca:CSharpValue>
@@ -1276,7 +1276,7 @@
                     </OutArgument>
                   </ui:Matches.Result>
                 </ui:Matches>
-                <If sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="If_10">
+                <If sap:VirtualizedContainerService.HintSize="1561,52" sap2010:WorkflowViewState.IdRef="If_10">
                   <If.Condition>
                     <InArgument x:TypeArguments="x:Boolean">
                       <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_39">index == 0</mca:CSharpValue>
@@ -1475,7 +1475,7 @@
                     </Sequence>
                   </If.Then>
                 </If>
-                <If sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="If_12">
+                <If sap:VirtualizedContainerService.HintSize="1561,52" sap2010:WorkflowViewState.IdRef="If_12">
                   <If.Condition>
                     <InArgument x:TypeArguments="x:Boolean">
                       <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_44">index == 4</mca:CSharpValue>
@@ -1488,7 +1488,7 @@
                     </scg1:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <If.Then>
-                    <Sequence sap:VirtualizedContainerService.HintSize="695,1965" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                    <Sequence sap:VirtualizedContainerService.HintSize="756,2307" sap2010:WorkflowViewState.IdRef="Sequence_19">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="x:Double" Name="IsDouble" />
                         <Variable x:TypeArguments="x:String" Name="Data" />
@@ -1498,7 +1498,28 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg1:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <Assign sap:VirtualizedContainerService.HintSize="653,60" sap2010:WorkflowViewState.IdRef="Assign_30">
+                      <If sap:VirtualizedContainerService.HintSize="714,210" sap2010:WorkflowViewState.IdRef="If_55">
+                        <If.Condition>
+                          <InArgument x:TypeArguments="x:Boolean">
+                            <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_275">extractedBankStatement.Contains("Shoppyluxe PTE LTD")</mca:CSharpValue>
+                          </InArgument>
+                        </If.Condition>
+                        <If.Then>
+                          <ui:Matches sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="Matches_21" IsBuilderTabModified="False" Pattern="(?&lt;=Total\sEquity\s&amp;\sReserves\s).*?(?=\s)" RegexOption="IgnoreCase, Compiled">
+                            <ui:Matches.Input>
+                              <InArgument x:TypeArguments="x:String">
+                                <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_276">extractedBankStatement</mca:CSharpValue>
+                              </InArgument>
+                            </ui:Matches.Input>
+                            <ui:Matches.Result>
+                              <OutArgument x:TypeArguments="scg1:IEnumerable(str:Match)">
+                                <mca:CSharpReference x:TypeArguments="scg1:IEnumerable(str:Match)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_130">regexOutput</mca:CSharpReference>
+                              </OutArgument>
+                            </ui:Matches.Result>
+                          </ui:Matches>
+                        </If.Then>
+                      </If>
+                      <Assign sap:VirtualizedContainerService.HintSize="714,60" sap2010:WorkflowViewState.IdRef="Assign_30">
                         <Assign.To>
                           <OutArgument x:TypeArguments="x:String">
                             <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_58">ValueSplit</mca:CSharpReference>
@@ -1510,7 +1531,7 @@
                           </InArgument>
                         </Assign.Value>
                       </Assign>
-                      <ui:InterruptibleWhile DisplayName="While" sap:VirtualizedContainerService.HintSize="653,319" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_5">
+                      <ui:InterruptibleWhile DisplayName="While" sap:VirtualizedContainerService.HintSize="714,319" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_5">
                         <ui:InterruptibleWhile.Body>
                           <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_25">
                             <sap:WorkflowViewStateService.ViewState>
@@ -1536,94 +1557,101 @@
                           <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_215">ValueSplit.Split(' ')[0] == ""</mca:CSharpValue>
                         </ui:InterruptibleWhile.Condition>
                       </ui:InterruptibleWhile>
-                      <If sap:VirtualizedContainerService.HintSize="653,210" sap2010:WorkflowViewState.IdRef="If_37">
+                      <If sap:VirtualizedContainerService.HintSize="714,1102" sap2010:WorkflowViewState.IdRef="If_37">
                         <If.Condition>
                           <InArgument x:TypeArguments="x:Boolean">
                             <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_216">ValueSplit.Contains("(") || ValueSplit.Contains(")")</mca:CSharpValue>
                           </InArgument>
                         </If.Condition>
                         <If.Then>
-                          <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_49">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="x:String">
-                                <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_94">Data</mca:CSharpReference>
-                              </OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="x:String">
-                                <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_217">ValueSplit.Replace("(","").Replace(")","")</mca:CSharpValue>
-                              </InArgument>
-                            </Assign.Value>
-                          </Assign>
-                        </If.Then>
-                      </If>
-                      <If sap:VirtualizedContainerService.HintSize="653,760" sap2010:WorkflowViewState.IdRef="If_23">
-                        <If.Condition>
-                          <InArgument x:TypeArguments="x:Boolean">
-                            <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_218">!Double.TryParse(Data.Split(' ')[0].Replace(",","").Replace("t","1").Replace("L","1").Replace("s","5"), out IsDouble)</mca:CSharpValue>
-                          </InArgument>
-                        </If.Condition>
-                        <If.Then>
-                          <Sequence sap:VirtualizedContainerService.HintSize="382,610" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                          <Sequence sap:VirtualizedContainerService.HintSize="569,952" sap2010:WorkflowViewState.IdRef="Sequence_54">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg1:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg1:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:Matches sap:VirtualizedContainerService.HintSize="340,59" sap2010:WorkflowViewState.IdRef="Matches_8" IsBuilderTabModified="False" Pattern="(?&lt;=Equity\sattributable\sto\sowners\sof\sthe\sCompany\s).*?(?=\n)" RegexOption="IgnoreCase, Compiled">
-                              <ui:Matches.Input>
-                                <InArgument x:TypeArguments="x:String">
-                                  <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_144">extractedBankStatement</mca:CSharpValue>
-                                </InArgument>
-                              </ui:Matches.Input>
-                              <ui:Matches.Result>
-                                <OutArgument x:TypeArguments="scg1:IEnumerable(str:Match)">
-                                  <mca:CSharpReference x:TypeArguments="scg1:IEnumerable(str:Match)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_57">regexOutput</mca:CSharpReference>
-                                </OutArgument>
-                              </ui:Matches.Result>
-                            </ui:Matches>
-                            <Assign sap:VirtualizedContainerService.HintSize="340,60" sap2010:WorkflowViewState.IdRef="Assign_22">
+                            <Assign sap:VirtualizedContainerService.HintSize="527,60" sap2010:WorkflowViewState.IdRef="Assign_49">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="x:String">
-                                  <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_44">ValueSplit</mca:CSharpReference>
+                                  <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_94">Data</mca:CSharpReference>
                                 </OutArgument>
                               </Assign.To>
                               <Assign.Value>
                                 <InArgument x:TypeArguments="x:String">
-                                  <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_100">regexOutput.First().ToString()</mca:CSharpValue>
+                                  <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_217">ValueSplit.Replace("(","").Replace(")","")</mca:CSharpValue>
                                 </InArgument>
                               </Assign.Value>
                             </Assign>
-                            <ui:InterruptibleWhile DisplayName="While" sap:VirtualizedContainerService.HintSize="340,319" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_3">
-                              <ui:InterruptibleWhile.Body>
-                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                            <If sap:VirtualizedContainerService.HintSize="527,760" sap2010:WorkflowViewState.IdRef="If_23">
+                              <If.Condition>
+                                <InArgument x:TypeArguments="x:Boolean">
+                                  <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_218">!Double.TryParse(Data.Split(' ')[0].Replace(",","").Replace("t","1").Replace("L","1").Replace("s","5"), out IsDouble)</mca:CSharpValue>
+                                </InArgument>
+                              </If.Condition>
+                              <If.Then>
+                                <Sequence sap:VirtualizedContainerService.HintSize="382,610" sap2010:WorkflowViewState.IdRef="Sequence_26">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg1:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg1:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_23">
+                                  <ui:Matches sap:VirtualizedContainerService.HintSize="340,59" sap2010:WorkflowViewState.IdRef="Matches_8" IsBuilderTabModified="False" Pattern="(?&lt;=Equity\sattributable\sto\sowners\sof\sthe\sCompany\s).*?(?=\n)" RegexOption="IgnoreCase, Compiled">
+                                    <ui:Matches.Input>
+                                      <InArgument x:TypeArguments="x:String">
+                                        <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_144">extractedBankStatement</mca:CSharpValue>
+                                      </InArgument>
+                                    </ui:Matches.Input>
+                                    <ui:Matches.Result>
+                                      <OutArgument x:TypeArguments="scg1:IEnumerable(str:Match)">
+                                        <mca:CSharpReference x:TypeArguments="scg1:IEnumerable(str:Match)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_57">regexOutput</mca:CSharpReference>
+                                      </OutArgument>
+                                    </ui:Matches.Result>
+                                  </ui:Matches>
+                                  <Assign sap:VirtualizedContainerService.HintSize="340,60" sap2010:WorkflowViewState.IdRef="Assign_22">
                                     <Assign.To>
                                       <OutArgument x:TypeArguments="x:String">
-                                        <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_45">ValueSplit</mca:CSharpReference>
+                                        <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_44">ValueSplit</mca:CSharpReference>
                                       </OutArgument>
                                     </Assign.To>
                                     <Assign.Value>
                                       <InArgument x:TypeArguments="x:String">
-                                        <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_102">ValueSplit.Substring(1)</mca:CSharpValue>
+                                        <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_100">regexOutput.First().ToString()</mca:CSharpValue>
                                       </InArgument>
                                     </Assign.Value>
                                   </Assign>
+                                  <ui:InterruptibleWhile DisplayName="While" sap:VirtualizedContainerService.HintSize="340,319" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_3">
+                                    <ui:InterruptibleWhile.Body>
+                                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                                        <sap:WorkflowViewStateService.ViewState>
+                                          <scg1:Dictionary x:TypeArguments="x:String, x:Object">
+                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                          </scg1:Dictionary>
+                                        </sap:WorkflowViewStateService.ViewState>
+                                        <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_23">
+                                          <Assign.To>
+                                            <OutArgument x:TypeArguments="x:String">
+                                              <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_45">ValueSplit</mca:CSharpReference>
+                                            </OutArgument>
+                                          </Assign.To>
+                                          <Assign.Value>
+                                            <InArgument x:TypeArguments="x:String">
+                                              <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_102">ValueSplit.Substring(1)</mca:CSharpValue>
+                                            </InArgument>
+                                          </Assign.Value>
+                                        </Assign>
+                                      </Sequence>
+                                    </ui:InterruptibleWhile.Body>
+                                    <ui:InterruptibleWhile.Condition>
+                                      <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_117">ValueSplit.Split(' ')[0] == ""</mca:CSharpValue>
+                                    </ui:InterruptibleWhile.Condition>
+                                  </ui:InterruptibleWhile>
                                 </Sequence>
-                              </ui:InterruptibleWhile.Body>
-                              <ui:InterruptibleWhile.Condition>
-                                <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_117">ValueSplit.Split(' ')[0] == ""</mca:CSharpValue>
-                              </ui:InterruptibleWhile.Condition>
-                            </ui:InterruptibleWhile>
+                              </If.Then>
+                            </If>
                           </Sequence>
                         </If.Then>
                       </If>
-                      <If sap:VirtualizedContainerService.HintSize="653,364" sap2010:WorkflowViewState.IdRef="If_11">
+                      <If sap:VirtualizedContainerService.HintSize="714,364" sap2010:WorkflowViewState.IdRef="If_11">
                         <If.Condition>
                           <InArgument x:TypeArguments="x:Boolean">
                             <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_125">ValueSplit.Split(' ')[0].Contains("(") || ValueSplit.Split(' ')[0].Contains(")") || ValueSplit.Split(' ')[0].Contains("-")</mca:CSharpValue>
@@ -1699,7 +1727,7 @@
                     </Sequence>
                   </If.Then>
                 </If>
-                <If sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="If_6">
+                <If sap:VirtualizedContainerService.HintSize="1561,1836" sap2010:WorkflowViewState.IdRef="If_6">
                   <If.Condition>
                     <InArgument x:TypeArguments="x:Boolean">
                       <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_66">index == 1 || index == 2</mca:CSharpValue>
@@ -1707,18 +1735,18 @@
                   </If.Condition>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg1:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       <x:Boolean x:Key="IsPinned">False</x:Boolean>
                     </scg1:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <If.Then>
-                    <Sequence sap:VirtualizedContainerService.HintSize="1224,1345" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                    <Sequence sap:VirtualizedContainerService.HintSize="1416,1686" sap2010:WorkflowViewState.IdRef="Sequence_14">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg1:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg1:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <If sap:VirtualizedContainerService.HintSize="1182,1253" sap2010:WorkflowViewState.IdRef="If_20">
+                      <If sap:VirtualizedContainerService.HintSize="1374,1594" sap2010:WorkflowViewState.IdRef="If_20">
                         <If.Condition>
                           <InArgument x:TypeArguments="x:Boolean">
                             <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_115">regexOutput.Count() != 0</mca:CSharpValue>
@@ -1784,34 +1812,62 @@
                           </Sequence>
                         </If.Then>
                         <If.Else>
-                          <Sequence sap:VirtualizedContainerService.HintSize="755,1103" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                          <Sequence sap:VirtualizedContainerService.HintSize="947,1444" sap2010:WorkflowViewState.IdRef="Sequence_27">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg1:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               </scg1:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <If sap:VirtualizedContainerService.HintSize="713,210" sap2010:WorkflowViewState.IdRef="If_24">
+                            <If sap:VirtualizedContainerService.HintSize="905,551" sap2010:WorkflowViewState.IdRef="If_24">
                               <If.Condition>
                                 <InArgument x:TypeArguments="x:Boolean">
                                   <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_149">index == 1</mca:CSharpValue>
                                 </InArgument>
                               </If.Condition>
                               <If.Then>
-                                <ui:Matches sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="Matches_9" IsBuilderTabModified="False" Pattern="(?&lt;=Current\sassets\s[\w\W]*\s\s\s\s).*?(?=\s)" RegexOption="IgnoreCase, Compiled">
-                                  <ui:Matches.Input>
-                                    <InArgument x:TypeArguments="x:String">
-                                      <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_150">extractedBankStatement</mca:CSharpValue>
-                                    </InArgument>
-                                  </ui:Matches.Input>
-                                  <ui:Matches.Result>
-                                    <OutArgument x:TypeArguments="scg1:IEnumerable(str:Match)">
-                                      <mca:CSharpReference x:TypeArguments="scg1:IEnumerable(str:Match)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_60">regexOutput</mca:CSharpReference>
-                                    </OutArgument>
-                                  </ui:Matches.Result>
-                                </ui:Matches>
+                                <Sequence sap:VirtualizedContainerService.HintSize="526,401" sap2010:WorkflowViewState.IdRef="Sequence_55">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg1:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg1:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:Matches sap:VirtualizedContainerService.HintSize="484,59" sap2010:WorkflowViewState.IdRef="Matches_9" IsBuilderTabModified="False" Pattern="(?&lt;=Current\sassets\s[\w\W]*\s\s\s\s).*?(?=\s)" RegexOption="IgnoreCase, Compiled">
+                                    <ui:Matches.Input>
+                                      <InArgument x:TypeArguments="x:String">
+                                        <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_150">extractedBankStatement</mca:CSharpValue>
+                                      </InArgument>
+                                    </ui:Matches.Input>
+                                    <ui:Matches.Result>
+                                      <OutArgument x:TypeArguments="scg1:IEnumerable(str:Match)">
+                                        <mca:CSharpReference x:TypeArguments="scg1:IEnumerable(str:Match)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_60">regexOutput</mca:CSharpReference>
+                                      </OutArgument>
+                                    </ui:Matches.Result>
+                                  </ui:Matches>
+                                  <If sap:VirtualizedContainerService.HintSize="484,210" sap2010:WorkflowViewState.IdRef="If_56">
+                                    <If.Condition>
+                                      <InArgument x:TypeArguments="x:Boolean">
+                                        <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_277">extractedBankStatement.Contains("TRADEIT.COM PTE LTD")</mca:CSharpValue>
+                                      </InArgument>
+                                    </If.Condition>
+                                    <If.Then>
+                                      <ui:Matches sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="Matches_22" IsBuilderTabModified="False" Pattern="(?&lt;=Total\sassets\s).*?(?=\n)" RegexOption="IgnoreCase, Compiled">
+                                        <ui:Matches.Input>
+                                          <InArgument x:TypeArguments="x:String">
+                                            <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_278">extractedBankStatement</mca:CSharpValue>
+                                          </InArgument>
+                                        </ui:Matches.Input>
+                                        <ui:Matches.Result>
+                                          <OutArgument x:TypeArguments="scg1:IEnumerable(str:Match)">
+                                            <mca:CSharpReference x:TypeArguments="scg1:IEnumerable(str:Match)" sap2010:WorkflowViewState.IdRef="CSharpReference`1_131">regexOutput</mca:CSharpReference>
+                                          </OutArgument>
+                                        </ui:Matches.Result>
+                                      </ui:Matches>
+                                    </If.Then>
+                                  </If>
+                                </Sequence>
                               </If.Then>
                               <If.Else>
-                                <ui:Matches sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="Matches_10" IsBuilderTabModified="False" Pattern="(?&lt;=Current\sliabilities\s[\w\W]*\s\s\s\s).*?(?=\s)" RegexOption="IgnoreCase, Compiled">
+                                <ui:Matches sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="Matches_10" IsBuilderTabModified="False" Pattern="(?&lt;=(Current|current)\s(liabilities|liability)\s[\w\W]*\s\s\s\s).*?(?=\s)" RegexOption="IgnoreCase, Compiled">
                                   <ui:Matches.Input>
                                     <InArgument x:TypeArguments="x:String">
                                       <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_151">extractedBankStatement</mca:CSharpValue>
@@ -1825,7 +1881,7 @@
                                 </ui:Matches>
                               </If.Else>
                             </If>
-                            <If sap:VirtualizedContainerService.HintSize="713,761" sap2010:WorkflowViewState.IdRef="If_25">
+                            <If sap:VirtualizedContainerService.HintSize="905,761" sap2010:WorkflowViewState.IdRef="If_25">
                               <If.Condition>
                                 <InArgument x:TypeArguments="x:Boolean">
                                   <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_152">regexOutput.Count() != 0</mca:CSharpValue>
@@ -1909,7 +1965,7 @@
                     </Sequence>
                   </If.Then>
                 </If>
-                <If sap:VirtualizedContainerService.HintSize="334,52" sap2010:WorkflowViewState.IdRef="If_2">
+                <If sap:VirtualizedContainerService.HintSize="1561,52" sap2010:WorkflowViewState.IdRef="If_2">
                   <If.Condition>
                     <InArgument x:TypeArguments="x:Boolean">
                       <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_73">index == 3</mca:CSharpValue>
@@ -2084,14 +2140,14 @@
           </ui:ForEachRow.DataTable>
           <sap:WorkflowViewStateService.ViewState>
             <scg1:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg1:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:ForEachRow>
       </If.Then>
     </If>
-    <ui:AddDataRow DataRow="{x:Null}" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="521,22" sap2010:WorkflowViewState.IdRef="AddDataRow_1">
+    <ui:AddDataRow DataRow="{x:Null}" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="1590,22" sap2010:WorkflowViewState.IdRef="AddDataRow_1">
       <ui:AddDataRow.ArrayRow>
         <InArgument x:TypeArguments="s:Object[]">
           <mca:CSharpValue x:TypeArguments="s:Object[]" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">new String[]{"Current Ratio",(Dictionary["Current Assets"]/Dictionary["Current Liabilities"]).ToString("N2")}</mca:CSharpValue>
@@ -2103,7 +2159,7 @@
         </InOutArgument>
       </ui:AddDataRow.DataTable>
     </ui:AddDataRow>
-    <ui:AddDataRow DataRow="{x:Null}" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="521,22" sap2010:WorkflowViewState.IdRef="AddDataRow_2">
+    <ui:AddDataRow DataRow="{x:Null}" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="1590,22" sap2010:WorkflowViewState.IdRef="AddDataRow_2">
       <ui:AddDataRow.ArrayRow>
         <InArgument x:TypeArguments="s:Object[]">
           <mca:CSharpValue x:TypeArguments="s:Object[]" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12">new String[]{"Gearing Ratio",((Dictionary["Current Liabilities"] + Dictionary["Non-Current Liabilities"]) / Dictionary["Capital"]).ToString("N2")}</mca:CSharpValue>
@@ -2115,7 +2171,7 @@
         </InOutArgument>
       </ui:AddDataRow.DataTable>
     </ui:AddDataRow>
-    <ui:WriteRange AddHeaders="True" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="521,115" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" StartingCell="A1" WorkbookPath="Excel output files/Financial Statement Output.xlsx">
+    <ui:WriteRange AddHeaders="True" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="1590,115" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" StartingCell="A1" WorkbookPath="Excel output files/Financial Statement Output.xlsx">
       <ui:WriteRange.DataTable>
         <InArgument x:TypeArguments="sd:DataTable">
           <mca:CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">outputTable</mca:CSharpValue>
