@@ -1,6 +1,6 @@
 {
   "name": "File Renaming and population of Credit Score",
-  "description": "Rename files and extract data from pdf using regex and populate Credit Score sheet",
+  "description": "File renaming and extract data from pdf using regex and populating to Credit Score Enhancement Sheet",
   "main": "Final Script.xaml",
   "dependencies": {
     "ActivitiesPdfToExcelV2": "[1.0.5]",

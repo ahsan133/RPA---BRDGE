@@ -3,7 +3,7 @@
     <x:Property Name="GuarantorACRAFile" Type="InArgument(x:String)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
-  <sap:VirtualizedContainerService.HintSize>748,1081</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>693,1079</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -84,7 +84,7 @@
       <AssemblyReference>UiPath.IntelligentOCR</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="GUARANTOR ACRA" sap:VirtualizedContainerService.HintSize="611,916" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="GUARANTOR ACRA" sap:VirtualizedContainerService.HintSize="611,914" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="extractedLegitation" />
       <Variable x:TypeArguments="sd:DataTable" Name="outputTable" />
@@ -139,7 +139,7 @@
         </InArgument>
       </Assign.Value>
     </Assign>
-    <If sap:VirtualizedContainerService.HintSize="569,210" sap2010:WorkflowViewState.IdRef="If_3">
+    <If sap:VirtualizedContainerService.HintSize="569,208" sap2010:WorkflowViewState.IdRef="If_3">
       <If.Condition>
         <InArgument x:TypeArguments="x:Boolean">
           <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_23">Litigation.ToString().Contains("Nil")</mca:CSharpValue>
