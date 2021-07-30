@@ -111,11 +111,11 @@
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <av:Point x:Key="ShapeLocation">410,104</av:Point>
-          <av:Size x:Key="ShapeSize">200,52</av:Size>
+          <av:Size x:Key="ShapeSize">200,51</av:Size>
           <av:PointCollection x:Key="ConnectorLocation">510,156 510,174</av:PointCollection>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke FileSystem workflow" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="FileSystem.xaml">
+      <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke FileSystem workflow" sap:VirtualizedContainerService.HintSize="334,112" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="FileSystem.xaml">
         <ui:InvokeWorkflowFile.Arguments>
           <OutArgument x:TypeArguments="x:String" x:Key="BankStatementFolderPath">
             <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_50">BankStatementsPath</mca:CSharpReference>
@@ -141,9 +141,9 @@
           <OutArgument x:TypeArguments="x:String" x:Key="CreditScore">
             <mca:CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_53">CreditScore</mca:CSharpReference>
           </OutArgument>
-          <InArgument x:TypeArguments="x:Boolean" x:Key="IsFinancialStatementFolder">
-            <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_83">IsFinancialStatementFolder</mca:CSharpValue>
-          </InArgument>
+          <OutArgument x:TypeArguments="x:Boolean" x:Key="IsFinancialStatementFolder">
+            <mca:CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_55">IsFinancialStatementFolder</mca:CSharpReference>
+          </OutArgument>
         </ui:InvokeWorkflowFile.Arguments>
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -156,11 +156,11 @@
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <av:Point x:Key="ShapeLocation">410,174</av:Point>
-              <av:Size x:Key="ShapeSize">200,52</av:Size>
+              <av:Size x:Key="ShapeSize">200,51</av:Size>
               <av:PointCollection x:Key="ConnectorLocation">510,226 510,244</av:PointCollection>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:ReadRange Range="{x:Null}" AddHeaders="True" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="ReadRange_4" SheetName="CREDIT SCORE">
+          <ui:ReadRange Range="{x:Null}" AddHeaders="True" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ReadRange_4" SheetName="CREDIT SCORE">
             <ui:ReadRange.DataTable>
               <OutArgument x:TypeArguments="sd:DataTable">
                 <mca:CSharpReference x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_54">outputDataTable</mca:CSharpReference>
@@ -182,11 +182,11 @@
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <av:Point x:Key="ShapeLocation">410,244</av:Point>
-                  <av:Size x:Key="ShapeSize">200,52</av:Size>
+                  <av:Size x:Key="ShapeSize">200,51</av:Size>
                   <av:PointCollection x:Key="ConnectorLocation">510,296 510,316.5</av:PointCollection>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <If sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="If_1">
+              <If sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_1">
                 <If.Condition>
                   <InArgument x:TypeArguments="x:Boolean">
                     <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_92">ACRAFile != null</mca:CSharpValue>
@@ -249,7 +249,7 @@
                   <FlowDecision.True>
                     <FlowDecision x:Name="__ReferenceID12" DisplayName="Is Financial Statement a Folder" sap:VirtualizedContainerService.HintSize="160,87" sap2010:WorkflowViewState.IdRef="FlowDecision_1">
                       <FlowDecision.Condition>
-                        <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_84">IsFinancialStatementFolder == true</mca:CSharpValue>
+                        <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_99">IsFinancialStatementFolder</mca:CSharpValue>
                       </FlowDecision.Condition>
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -265,11 +265,11 @@
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <av:Point x:Key="ShapeLocation">70,484</av:Point>
-                              <av:Size x:Key="ShapeSize">200,52</av:Size>
+                              <av:Size x:Key="ShapeSize">200,51</av:Size>
                               <av:PointCollection x:Key="ConnectorLocation">170,536 170,566 290,566 290,594</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Financial Statement Folder Files workflow" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Financial Statement Folder Files.xaml">
+                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Financial Statement Folder Files workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Financial Statement Folder Files.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
                               <InArgument x:TypeArguments="x:String" x:Key="FinancialStatementFolderPath">
                                 <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_85">FinancialStatement</mca:CSharpValue>
@@ -286,11 +286,11 @@
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <av:Point x:Key="ShapeLocation">190,594</av:Point>
-                                  <av:Size x:Key="ShapeSize">200,52</av:Size>
+                                  <av:Size x:Key="ShapeSize">200,51</av:Size>
                                   <av:PointCollection x:Key="ConnectorLocation">290,646 290,676 520,676 520,694</av:PointCollection>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Compare Excel files workflow" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_14" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Compare Excel files.xaml">
+                              <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Compare Excel files workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_14" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Compare Excel files.xaml">
                                 <ui:InvokeWorkflowFile.Arguments>
                                   <InArgument x:TypeArguments="x:String" x:Key="inputFilePath">Excel output files/Financial Statement Output.xlsx</InArgument>
                                   <InArgument x:TypeArguments="x:String" x:Key="CreditScore">
@@ -308,11 +308,11 @@
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <av:Point x:Key="ShapeLocation">420,694</av:Point>
-                                      <av:Size x:Key="ShapeSize">200,52</av:Size>
+                                      <av:Size x:Key="ShapeSize">200,51</av:Size>
                                       <av:PointCollection x:Key="ConnectorLocation">520,746 520,764</av:PointCollection>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <If sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="If_2">
+                                  <If sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="If_2">
                                     <If.Condition>
                                       <InArgument x:TypeArguments="x:Boolean">
                                         <mca:CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_96">BankStatementsPath != null</mca:CSharpValue>
@@ -363,11 +363,11 @@
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <av:Point x:Key="ShapeLocation">420,764</av:Point>
-                                          <av:Size x:Key="ShapeSize">200,52</av:Size>
+                                          <av:Size x:Key="ShapeSize">200,51</av:Size>
                                           <av:PointCollection x:Key="ConnectorLocation">520,816 520,840</av:PointCollection>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="ForEach`1_4">
+                                      <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="ForEach`1_4">
                                         <ui:ForEach.Body>
                                           <ActivityAction x:TypeArguments="x:String">
                                             <ActivityAction.Argument>
@@ -812,11 +812,11 @@
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <av:Point x:Key="ShapeLocation">320,484</av:Point>
-                              <av:Size x:Key="ShapeSize">200,52</av:Size>
+                              <av:Size x:Key="ShapeSize">200,51</av:Size>
                               <av:PointCollection x:Key="ConnectorLocation">420,536 420,566 290,566 290,594</av:PointCollection>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Financial Statement workflow" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Financial Statement.xaml">
+                          <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Invoke Financial Statement workflow" sap:VirtualizedContainerService.HintSize="200,51" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" LogEntry="No" LogExit="No" UnSafe="False" WorkflowFileName="Financial Statement.xaml">
                             <ui:InvokeWorkflowFile.Arguments>
                               <InArgument x:TypeArguments="x:String" x:Key="FinancialStatementPath">
                                 <mca:CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_72">FinancialStatement</mca:CSharpValue>

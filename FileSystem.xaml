@@ -8,7 +8,7 @@
     <x:Property Name="CompanyPath" Type="InArgument(x:String)" />
     <x:Property Name="FinancialStatement" Type="OutArgument(x:String)" />
     <x:Property Name="CreditScore" Type="OutArgument(x:String)" />
-    <x:Property Name="IsFinancialStatementFolder" Type="InArgument(x:Boolean)" />
+    <x:Property Name="IsFinancialStatementFolder" Type="OutArgument(x:Boolean)" />
   </x:Members>
   <sap2010:ExpressionActivityEditor.ExpressionActivityEditor>C#</sap2010:ExpressionActivityEditor.ExpressionActivityEditor>
   <sap:VirtualizedContainerService.HintSize>1592,5709</sap:VirtualizedContainerService.HintSize>
@@ -82,6 +82,7 @@
       <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="FileSystem" sap:VirtualizedContainerService.HintSize="1602,5544" sap2010:WorkflowViewState.IdRef="Sequence_1">
